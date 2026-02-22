@@ -218,14 +218,6 @@ export default function ContactContent() {
                 </div>
               </div>
 
-              {/* Workspace image */}
-              <div className="mt-14 hidden lg:block">
-                <AnimatedImage
-                  src="/portfolio/Untitled design (11).png"
-                  alt="Our workspace"
-                  aspect="aspect-[3/2]"
-                />
-              </div>
             </div>
 
             {/* Right — Form */}
