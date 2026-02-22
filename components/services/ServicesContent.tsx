@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
-import Image from "next/image";
 
 const services = [
   {
@@ -16,10 +15,14 @@ const services = [
       "Brand Voice & Messaging",
       "Competitive Analysis",
     ],
-    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=1000&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?w=800&h=1000&fit=crop&q=80",
+    ],
   },
   {
-    title: "Brand Consulting",
+    title: "Brand Consultancy",
     tagline: "A strategic partnership to guide your growth.",
     description:
       "Whether you're launching or scaling, we bring clarity to your vision. Got scattered thoughts? We shape them into clear, focused strategies that actually move forward.",
@@ -29,7 +32,45 @@ const services = [
       "Brand Audits",
       "Creative Direction",
     ],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=1000&fit=crop&q=80",
+    ],
+  },
+  {
+    title: "Marketing Consultancy",
+    tagline: "Purposeful growth begins with the right direction.",
+    description:
+      "Reels, posts, or campaigns — we make sure it speaks. And more importantly, we make sure it performs. We design marketing strategies tailored to your goals, values, and audience.",
+    offerings: [
+      "Content Strategy",
+      "Social Media Campaigns",
+      "Performance Marketing",
+      "Reels & Video Content",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1000&fit=crop&q=80",
+    ],
+  },
+  {
+    title: "SaaS",
+    tagline: "From concept to product — we build what scales.",
+    description:
+      "We design, develop, and launch SaaS products that solve real problems. From ideation and UX to full-stack development, we turn your software vision into a market-ready product.",
+    offerings: [
+      "Product Strategy & Roadmap",
+      "UI/UX Design",
+      "Full-Stack Development",
+      "Launch & Growth Support",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=1000&fit=crop&q=80",
+    ],
   },
   {
     title: "Website Development",
@@ -42,33 +83,11 @@ const services = [
       "Shopify & E-commerce",
       "SEO Integration",
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1000&fit=crop&q=80",
-  },
-  {
-    title: "Marketing Strategy",
-    tagline: "Purposeful growth begins with the right direction.",
-    description:
-      "Reels, posts, or campaigns — we make sure it speaks. And more importantly, we make sure it performs. We design marketing strategies tailored to your goals, values, and audience.",
-    offerings: [
-      "Content Strategy",
-      "Social Media Campaigns",
-      "Performance Marketing",
-      "Reels & Video Content",
+    images: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=1000&fit=crop&q=80",
     ],
-    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=1000&fit=crop&q=80",
-  },
-  {
-    title: "Market Research",
-    tagline: "Decisions backed by insight, not assumptions.",
-    description:
-      "We decode what your audience wants. Then, we help your brand say it in the right way. We uncover audience needs, industry patterns, and competitor positioning.",
-    offerings: [
-      "Audience Analysis",
-      "Industry Trend Research",
-      "Competitor Mapping",
-      "Consumer Insights",
-    ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=1000&fit=crop&q=80",
   },
   {
     title: "SEO",
@@ -81,7 +100,11 @@ const services = [
       "Keyword Strategy",
       "Analytics & Reporting",
     ],
-    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=1000&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=1000&fit=crop&q=80",
+    ],
   },
 ];
 
@@ -93,6 +116,15 @@ function ServiceBlock({
   index: number;
 }) {
   const blockRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Auto-rotate images every 3s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % service.images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [service.images.length]);
 
   useGSAP(
     () => {
@@ -181,22 +213,36 @@ function ServiceBlock({
           </span>
         </div>
 
-        {/* Image */}
+        {/* Image Carousel */}
         <div className={`md:col-span-4 ${isEven ? "md:order-2" : "md:order-3"}`}>
           <div
             className="service-img relative aspect-[3/4] rounded-2xl overflow-hidden"
             style={{ clipPath: "inset(100% 0 0 0)" }}
           >
             <div className="service-img-inner absolute inset-0">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+              {service.images.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`${service.title} ${i + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === activeIndex ? "opacity-100" : "opacity-0"}`}
+                  loading="lazy"
+                />
+              ))}
             </div>
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-dark/40 via-transparent to-transparent" />
+            {/* Dot indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {service.images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${i === activeIndex ? "bg-teal w-4" : "bg-snow/40"}`}
+                  aria-label={`View image ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
