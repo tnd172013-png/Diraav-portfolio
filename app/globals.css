@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-snow: #d1dbeb;
+  --color-lavender: #d1dbeb;
+  --color-sage: #829595;
+  --color-slate: #596673;
+  --color-teal: #2f4f4f;
+  --color-navy: #151f28;
+  --color-dark: #1C1C1C;
+
+  --font-heading: "EB Garamond", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  body {
+    background: var(--color-dark);
+    color: var(--color-snow);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+  }
+
+  /* Light theme: swap dark ↔ snow */
+  html.theme-light {
+    --color-dark: #f8f9f9;
+    --color-snow: #151f28;
+  }
+
+  /* Keep footer always dark regardless of theme */
+  html.theme-light footer {
+    --color-snow: #d1dbeb;
+  }
+}
+
+/* Smooth theme transition — only on elements without explicit Tailwind transitions */
+@layer base {
+  html.theme-transitioning *, html.theme-transitioning *::before, html.theme-transitioning *::after {
+    transition: background-color 350ms ease, border-color 350ms ease, color 350ms ease, fill 350ms ease !important;
+  }
+}
+
+::selection {
+  background: var(--color-teal);
+  color: var(--color-snow);
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Smooth scroll anchor offset for fixed nav */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Clientele logo carousel */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+
+/* Client logos: show original on light, invert on dark */
+.client-logo {
+  filter: grayscale(100%);
+}
+
+.client-logo:hover {
+  filter: grayscale(0%);
+}
+
+html:not(.theme-light) .client-logo {
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+html:not(.theme-light) .client-logo:hover {
+  filter: grayscale(0%) brightness(0) invert(1);
+}
+
+/* Hide scrollbar for testimonials */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
