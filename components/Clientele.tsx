@@ -14,20 +14,6 @@ const clientLogos = [
   { src: "/portfolio/shambus.jpg", alt: "Shambu's" },
 ];
 
-function LogoItem({ logo }: { logo: (typeof clientLogos)[number] }) {
-  return (
-    <div className="shrink-0 flex items-center justify-center h-20 md:h-24 w-44 md:w-56 mx-6 md:mx-10">
-      <img
-        src={logo.src}
-        alt={logo.alt}
-        className="max-h-full max-w-full object-contain client-logo opacity-60 hover:opacity-100 transition-all duration-300 rounded-lg"
-        loading="lazy"
-        draggable={false}
-      />
-    </div>
-  );
-}
-
 export default function Clientele() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -36,13 +22,12 @@ export default function Clientele() {
       if (!sectionRef.current) return;
 
       gsap.fromTo(
-        sectionRef.current.querySelectorAll(".marquee-row"),
+        sectionRef.current.querySelector(".slider-track"),
         { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
           duration: 0.8,
-          stagger: 0.2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -70,37 +55,35 @@ export default function Clientele() {
         </TextReveal>
       </div>
 
-      {/* Row 1 — scrolls left */}
       <div
-        className="marquee-row relative flex mb-10 md:mb-14"
-        style={{ opacity: 0, transform: "translateY(30px)" }}
+        className="relative"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        }}
       >
-        <div className="flex animate-marquee-left">
-          {[...clientLogos, ...clientLogos].map((logo, i) => (
-            <LogoItem key={`r1-${i}`} logo={logo} />
-          ))}
-        </div>
-        <div className="flex animate-marquee-left" aria-hidden>
-          {[...clientLogos, ...clientLogos].map((logo, i) => (
-            <LogoItem key={`r1d-${i}`} logo={logo} />
-          ))}
-        </div>
-      </div>
-
-      {/* Row 2 — scrolls right */}
-      <div
-        className="marquee-row relative flex"
-        style={{ opacity: 0, transform: "translateY(30px)" }}
-      >
-        <div className="flex animate-marquee-right">
-          {[...clientLogos, ...clientLogos].map((logo, i) => (
-            <LogoItem key={`r2-${i}`} logo={logo} />
-          ))}
-        </div>
-        <div className="flex animate-marquee-right" aria-hidden>
-          {[...clientLogos, ...clientLogos].map((logo, i) => (
-            <LogoItem key={`r2d-${i}`} logo={logo} />
-          ))}
+        <div
+          className="slider-track flex animate-marquee-left"
+          style={{ opacity: 0, transform: "translateY(30px)", width: "max-content", gap: "3rem" }}
+        >
+          {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map(
+            (logo, i) => (
+              <div
+                key={i}
+                className="shrink-0 flex items-center justify-center h-16 md:h-20 w-36 md:w-44 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                  draggable={false}
+                />
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>

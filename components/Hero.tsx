@@ -87,7 +87,7 @@ export default function Hero() {
       <div className="relative z-10 px-6 md:px-10 mb-8 md:mb-10 max-w-4xl">
         <h1 ref={headingRef} className="font-heading text-white font-bold leading-[1.05] text-[clamp(2.5rem,6vw,5rem)]">
           {headingWords.map((word, i) => (
-            <span key={i} className="inline-block overflow-hidden mr-[0.25em]">
+            <span key={i} className="inline-block overflow-hidden mr-[0.25em] pb-[0.15em]">
               <span className="hero-word inline-block">{word}</span>
             </span>
           ))}

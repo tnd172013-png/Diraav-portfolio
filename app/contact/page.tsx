@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ContactContent from "@/components/contact/ContactContent";
 
 export const metadata: Metadata = {
@@ -16,7 +15,6 @@ export default function ContactPage() {
       <main>
         <ContactContent />
       </main>
-      <Footer />
     </>
   );
 }

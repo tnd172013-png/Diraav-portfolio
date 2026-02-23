@@ -29,7 +29,7 @@ export default function Contact() {
 
   useGSAP(
     () => {
-      if (!infoRef.current || !formRef.current) return;
+      if (!sectionRef.current || !infoRef.current || !formRef.current) return;
 
       gsap.fromTo(
         infoRef.current.children,
@@ -64,12 +64,13 @@ export default function Contact() {
           },
         }
       );
+
     },
     { scope: sectionRef }
   );
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 md:py-32 bg-dark">
+    <section ref={sectionRef} id="contact" className="pt-24 md:pt-32 pb-8 bg-dark">
       <div className="max-w-7xl mx-auto px-6">
         <TextReveal
           as="h2"
@@ -136,7 +137,8 @@ export default function Contact() {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="space-y-6 opacity-0"
+            className="space-y-6"
+            style={{ opacity: 0 }}
           >
             <div>
               <input
@@ -190,6 +192,13 @@ export default function Contact() {
             </button>
           </form>
         </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="border-t border-snow/5 mt-16 pt-6 pb-2 max-w-7xl mx-auto px-6">
+        <p className="text-snow/20 font-body text-xs text-center">
+          &copy; 2026 Diraav
+        </p>
       </div>
     </section>
   );
