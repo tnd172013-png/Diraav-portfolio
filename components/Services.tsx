@@ -7,27 +7,27 @@ import TextReveal from "@/components/ui/TextReveal";
 const services = [
   {
     title: "Marketing Strategy",
-    desc: "Purposeful growth begins with the right direction. We design marketing strategies tailored to your goals, values, and audience.",
+    desc: "Direction before distribution. We design structured growth pathways tailored to your business model, audience, and long-term goals.",
   },
   {
-    title: "Brand Consulting",
-    desc: "A strategic partnership to guide your growth. Whether you're launching or scaling, we bring clarity to your vision.",
+    title: "Brand Positioning & Strategy",
+    desc: "Clarity in how you are understood. We define your market position, messaging architecture, and differentiation.",
+  },
+  {
+    title: "Consulting",
+    desc: "Strategic guidance for founders and teams. From audits to growth recalibration, we support decision-making with structured insight.",
   },
   {
     title: "Market Research",
-    desc: "Decisions backed by insight, not assumptions. We uncover audience needs, industry patterns, and competitor positioning.",
-  },
-  {
-    title: "Brand Strategy",
-    desc: "The foundation of everything that follows. We help you define who you are, who you serve, and how to show up.",
+    desc: "Insight before assumption. We analyse industry landscapes, competitors, and audience behaviour to inform confident strategy.",
   },
   {
     title: "Website Development",
-    desc: "Your brand's digital home — designed with intention. We build minimal, elegant websites that communicate and convert.",
+    desc: "Digital infrastructure built with intention. Conversion-focused, structured websites designed to support visibility and scalability.",
   },
   {
-    title: "SEO",
-    desc: "Helping your brand show up in all the right places. We align your digital presence to support visibility and organic growth.",
+    title: "SaaS Strategy",
+    desc: "From idea to structured product. We help founders map positioning, user flow, and go-to-market direction for scalable digital platforms.",
   },
 ];
 
@@ -121,16 +121,16 @@ export default function Services() {
       const items = gridRef.current.querySelectorAll(".service-item");
       gsap.fromTo(
         items,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
           duration: 0.7,
-          stagger: 0.12,
-          ease: "power2.out",
+          stagger: 0.1,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: gridRef.current,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
@@ -143,21 +143,24 @@ export default function Services() {
     <section id="services" className="py-24 md:py-32 bg-dark">
       {/* Services — Frysta style: heading left, grid right */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16">
+        <div className="grid md:grid-cols-[1fr_3fr] gap-8 md:gap-16">
           {/* Left — Heading */}
           <div>
             <TextReveal
               as="h2"
-              className="font-heading text-snow text-[clamp(2rem,4vw,3.5rem)] tracking-tight"
+              className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"
             >
-              Services
+              What We Do
             </TextReveal>
+            <p className="text-snow/40 font-body text-sm leading-relaxed">
+              We design the thinking before we build the execution.
+            </p>
           </div>
 
           {/* Right — 3-column service grid */}
-          <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
+          <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-14">
             {services.map((service, i) => (
-              <div key={i} className="service-item">
+              <div key={i} className="service-item" style={{ opacity: 0, transform: "translateY(30px)" }}>
                 <div className="text-snow/30 mb-6">
                   <ServiceIcon index={i} />
                 </div>

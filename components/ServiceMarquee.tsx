@@ -23,7 +23,7 @@ export default function ServiceMarquee() {
         {items.map((src, i) => (
           <div
             key={i}
-            className="shrink-0 w-[220px] md:w-[280px] h-[300px] md:h-[400px] overflow-hidden cursor-pointer group"
+            className="shrink-0 w-[160px] sm:w-[220px] md:w-[280px] h-[220px] sm:h-[300px] md:h-[400px] overflow-hidden cursor-pointer group"
           >
             <img
               src={src}

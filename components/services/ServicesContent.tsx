@@ -5,49 +5,15 @@ import { gsap, useGSAP } from "@/lib/gsap";
 
 const services = [
   {
-    title: "Brand Strategy",
-    tagline: "The foundation of everything that follows.",
+    title: "Marketing Strategy",
+    tagline: "Direction before distribution.",
     description:
-      "We help you define who you are, who you serve, and how to show up. From name to visuals, we craft brands that tell your story. Every element is rooted in strategy and soul.",
+      "Before campaigns, before content, before scale — there must be direction. Our marketing strategy work focuses on building structured growth pathways tailored to your business model.",
     offerings: [
-      "Brand Positioning & Identity",
-      "Visual Language Development",
-      "Brand Voice & Messaging",
-      "Competitive Analysis",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?w=800&h=1000&fit=crop&q=80",
-    ],
-  },
-  {
-    title: "Brand Consultancy",
-    tagline: "A strategic partnership to guide your growth.",
-    description:
-      "Whether you're launching or scaling, we bring clarity to your vision. Got scattered thoughts? We shape them into clear, focused strategies that actually move forward.",
-    offerings: [
-      "Growth Strategy",
-      "Business Consulting",
-      "Brand Audits",
-      "Creative Direction",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=1000&fit=crop&q=80",
-    ],
-  },
-  {
-    title: "Marketing Consultancy",
-    tagline: "Purposeful growth begins with the right direction.",
-    description:
-      "Reels, posts, or campaigns — we make sure it speaks. And more importantly, we make sure it performs. We design marketing strategies tailored to your goals, values, and audience.",
-    offerings: [
-      "Content Strategy",
-      "Social Media Campaigns",
-      "Performance Marketing",
-      "Reels & Video Content",
+      "End-to-end growth mapping",
+      "Customer journey design",
+      "Funnel architecture",
+      "Lead generation strategy",
     ],
     images: [
       "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=1000&fit=crop&q=80",
@@ -56,32 +22,66 @@ const services = [
     ],
   },
   {
-    title: "SaaS",
-    tagline: "From concept to product — we build what scales.",
+    title: "Brand Positioning & Strategy",
+    tagline: "Positioning determines perception. Perception determines growth.",
     description:
-      "We design, develop, and launch SaaS products that solve real problems. From ideation and UX to full-stack development, we turn your software vision into a market-ready product.",
+      "We help brands define how they are understood in the market. Strong positioning removes confusion — internally and externally.",
     offerings: [
-      "Product Strategy & Roadmap",
-      "UI/UX Design",
-      "Full-Stack Development",
-      "Launch & Growth Support",
+      "Core positioning framework",
+      "Messaging architecture",
+      "Brand narrative development",
+      "Competitive differentiation",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?w=800&h=1000&fit=crop&q=80",
+    ],
+  },
+  {
+    title: "Consulting",
+    tagline: "Strategic guidance for founders and teams.",
+    description:
+      "For founders and teams who need strategic guidance without full execution. Our consulting engagements are structured, not casual. Ideal for businesses that want clarity and direction while executing internally.",
+    offerings: [
+      "Business model analysis",
+      "Growth recalibration sessions",
+      "Marketing audits",
+      "Ongoing advisory retainers",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=1000&fit=crop&q=80",
+    ],
+  },
+  {
+    title: "Market Research",
+    tagline: "Insight before assumption.",
+    description:
+      "Every strategic move should be informed. Our research work supports both new ventures and scaling brands. It reduces assumptions. It increases precision.",
+    offerings: [
+      "Industry landscape analysis",
+      "Competitor benchmarking",
+      "Customer behaviour study",
+      "Market demand validation",
     ],
     images: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=1000&fit=crop&q=80",
     ],
   },
   {
     title: "Website Development",
-    tagline: "Your brand's digital home — designed with intention.",
+    tagline: "Your digital infrastructure.",
     description:
-      "We don't just make them pretty. We build minimal, elegant websites that communicate and convert. Custom designs, optimized coding, and a minimalist touch that works, sells, and scales with your business.",
+      "Your website is not just a design asset. It is your digital infrastructure. We build structured, scalable websites that combine clarity and performance. Designed for clarity. Built for growth.",
     offerings: [
-      "Custom Web Design",
-      "Responsive Development",
-      "Shopify & E-commerce",
-      "SEO Integration",
+      "Strategic site architecture",
+      "UX-focused layouts",
+      "Conversion pathway design",
+      "SEO-ready structure",
     ],
     images: [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1000&fit=crop&q=80",
@@ -90,20 +90,20 @@ const services = [
     ],
   },
   {
-    title: "SEO",
-    tagline: "Helping your brand show up in all the right places.",
+    title: "SaaS Strategy & Platform Development",
+    tagline: "From idea to structured product.",
     description:
-      "We don't vanish after deliverables are done. We stay for strategy, tweaks, and fresh ideas. We align your digital presence to support visibility and organic growth.",
+      "For founders building digital products and platforms. This service bridges product thinking with market readiness. Because SaaS growth is not just technical — it is strategic.",
     offerings: [
-      "On-page Optimization",
-      "Technical SEO Audits",
-      "Keyword Strategy",
-      "Analytics & Reporting",
+      "Product positioning",
+      "User journey structuring",
+      "Go-to-market strategy",
+      "Growth funnel design",
     ],
     images: [
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=1000&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=1000&fit=crop&q=80",
       "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=1000&fit=crop&q=80",
     ],
   },
 ];
@@ -270,7 +270,7 @@ function ServiceBlock({
 
             {/* Offerings */}
             <div>
-              <p className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase mb-5">
+              <p className="font-body text-snow text-xs tracking-[0.15em] uppercase mb-5">
                 What we deliver
               </p>
               <div className="grid grid-cols-2 gap-x-8 gap-y-4">
@@ -322,7 +322,6 @@ function FloatingShape({ className }: { className: string }) {
 
 export default function ServicesContent() {
   const heroRef = useRef<HTMLElement>(null);
-  const ctaRef = useRef<HTMLElement>(null);
   const philosophyRef = useRef<HTMLDivElement>(null);
   const helpRef = useRef<HTMLDivElement>(null);
 
@@ -401,34 +400,11 @@ export default function ServicesContent() {
     { scope: helpRef }
   );
 
-  useGSAP(
-    () => {
-      if (!ctaRef.current) return;
-
-      gsap.fromTo(
-        ctaRef.current.querySelectorAll(".cta-el"),
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ctaRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    },
-    { scope: ctaRef }
-  );
 
   return (
     <>
       {/* Hero with image */}
-      <section ref={heroRef} className="relative min-h-screen flex items-end bg-dark pt-40 pb-16 md:pb-24 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-end bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
         {/* Floating decorative shapes */}
         <FloatingShape className="w-64 h-64 top-32 -right-20 opacity-30" />
         <FloatingShape className="w-40 h-40 top-60 left-10 opacity-20" />
@@ -438,7 +414,7 @@ export default function ServicesContent() {
             {/* Left — Text */}
             <div className="md:col-span-7">
               <h1
-                className="hero-heading font-heading text-snow text-[clamp(3rem,9vw,6.5rem)] tracking-tight leading-[0.95] mb-8"
+                className="hero-heading font-heading text-snow text-[clamp(2.5rem,8vw,6.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8"
                 style={{ opacity: 0 }}
               >
                 Our<br />Services
@@ -451,12 +427,12 @@ export default function ServicesContent() {
                 className="hero-sub font-body text-snow/50 text-base md:text-lg max-w-xl leading-relaxed mb-10"
                 style={{ opacity: 0 }}
               >
-                We blend strategy, storytelling, and soulful design to help brands grow with purpose.
-                Every service is rooted in clarity, creativity, and deep collaboration.
+                At Diraav, every service begins with clarity. We don&apos;t execute in isolation.
+                We design systems where strategy, positioning, research, and infrastructure work together.
               </p>
 
               {/* Quick stats */}
-              <div className="flex gap-10 md:gap-16">
+              <div className="flex gap-6 md:gap-10 lg:gap-16">
                 {[
                   { num: "6+", label: "Services" },
                   { num: "20+", label: "Projects Delivered" },
@@ -464,7 +440,7 @@ export default function ServicesContent() {
                 ].map((stat, i) => (
                   <div key={i} className="hero-stat" style={{ opacity: 0 }}>
                     <span className="font-heading text-snow text-2xl md:text-3xl block">{stat.num}</span>
-                    <span className="font-body text-snow/40 text-xs tracking-[0.1em] uppercase">{stat.label}</span>
+                    <span className="font-body text-snow text-xs tracking-[0.1em] uppercase">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -493,11 +469,11 @@ export default function ServicesContent() {
       {/* Philosophy strip */}
       <section className="py-16 md:py-20 bg-dark border-y border-snow/10">
         <div ref={philosophyRef} className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-16">
             {[
-              { icon: "01", text: "Less clutter, more meaning" },
-              { icon: "02", text: "Purpose-led design" },
-              { icon: "03", text: "Strategy before aesthetics" },
+              { icon: "01", text: "Structured growth" },
+              { icon: "02", text: "Rooted branding" },
+              { icon: "03", text: "Calm execution" },
             ].map((item, i) => (
               <div
                 key={i}
@@ -531,11 +507,11 @@ export default function ServicesContent() {
         <FloatingShape className="w-96 h-96 -bottom-40 -right-40 opacity-20" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="font-heading text-snow text-[clamp(1.5rem,3vw,2.5rem)] tracking-tight mb-16">
+          <h2 className="font-heading text-snow text-[clamp(1.5rem,4vw,2.5rem)] tracking-tight mb-10 md:mb-16">
             How Diraav Can Help You
           </h2>
 
-          <div ref={helpRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+          <div ref={helpRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-12">
             {[
               {
                 num: "01",
@@ -569,10 +545,10 @@ export default function ServicesContent() {
               },
             ].map((item, i) => (
               <div key={i} className="help-item group" style={{ opacity: 0 }}>
-                <span className="font-body text-teal text-xs tracking-[0.15em] uppercase mb-3 block">
+                <span className="font-body text-snow text-xs tracking-[0.15em] uppercase mb-3 block">
                   {item.num}
                 </span>
-                <h3 className="font-heading text-snow text-xl md:text-2xl mb-3 group-hover:text-teal transition-colors duration-300">
+                <h3 className="font-heading text-snow text-lg md:text-2xl mb-3 group-hover:text-teal transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="font-body text-snow/50 text-sm leading-relaxed">
@@ -595,40 +571,12 @@ export default function ServicesContent() {
           <div className="absolute inset-0 bg-dark/60" />
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <p className="font-heading text-white text-[clamp(1.5rem,3vw,2.5rem)] text-center italic max-w-2xl px-6">
-            &ldquo;We don&apos;t just build brands. We build experiences that people remember.&rdquo;
+          <p className="font-heading text-white text-[clamp(1.5rem,4vw,2.5rem)] text-center italic max-w-2xl px-6">
+            &ldquo;Growth without structure creates noise. We build with intention.&rdquo;
           </p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section ref={ctaRef} className="py-24 md:py-32 bg-dark">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p
-            className="cta-el font-body text-snow/40 text-xs tracking-[0.2em] uppercase mb-6"
-            style={{ opacity: 0 }}
-          >
-            Ready to start?
-          </p>
-          <h2
-            className="cta-el font-heading text-snow text-[clamp(2rem,5vw,4rem)] tracking-tight mb-8"
-            style={{ opacity: 0 }}
-          >
-            Let&apos;s build something<br />
-            meaningful together.
-          </h2>
-          <a
-            href="/contact"
-            className="cta-el inline-flex items-center gap-3 font-body text-snow border border-snow/20 px-8 py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
-            style={{ opacity: 0 }}
-          >
-            Get in Touch
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-        </div>
-      </section>
     </>
   );
 }

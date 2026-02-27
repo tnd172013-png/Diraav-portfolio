@@ -135,7 +135,7 @@ function PortfolioCard({
       ref={cardRef}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="portfolio-card shrink-0 relative cursor-pointer overflow-hidden h-[380px] md:h-[480px] will-change-[flex-grow,border-radius]"
+      className="portfolio-card shrink-0 relative cursor-pointer overflow-hidden h-[280px] sm:h-[380px] md:h-[480px] will-change-[flex-grow,border-radius]"
       style={{
         flexGrow: 1,
         flexBasis: 0,
@@ -209,16 +209,19 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <TextReveal
           as="h2"
-          className="font-heading text-snow text-[clamp(2rem,4vw,3.5rem)] tracking-tight mb-4"
+          className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"
         >
-          Selected Works
+          Featured Projects
         </TextReveal>
+        <p className="text-snow/40 font-body text-base md:text-lg max-w-xl">
+          Here&apos;s what aligned execution looks like.
+        </p>
       </div>
 
       {/* Horizontal Gallery */}
       <div
         ref={galleryRef}
-        className="flex gap-3 md:gap-4 px-6 md:px-10"
+        className="flex gap-2 sm:gap-3 md:gap-4 px-3 sm:px-6 md:px-10"
       >
         {portfolioItems.map((item, i) => (
           <PortfolioCard key={i} item={item} />

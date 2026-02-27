@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import ServicesContent from "@/components/services/ServicesContent";
+import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
   title: "Our Services | Diraav",
@@ -14,6 +15,7 @@ export default function ServicesPage() {
       <Navbar />
       <main>
         <ServicesContent />
+        <Contact />
       </main>
     </>
   );

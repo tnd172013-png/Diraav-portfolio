@@ -37,7 +37,7 @@
 
   /* Light theme: swap dark ↔ snow */
   html.theme-light {
-    --color-dark: #f8f9f9;
+    --color-dark: #d1dbeb;
     --color-snow: #151f28;
   }
 

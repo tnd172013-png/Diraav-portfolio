@@ -4,32 +4,32 @@ import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 const philosophy = [
-  { num: "01", text: "Less clutter, more meaning" },
-  { num: "02", text: "Purpose-led design" },
-  { num: "03", text: "Strategy before aesthetics" },
-  { num: "04", text: "Growth with integrity" },
+  { num: "01", text: "Grounded vision" },
+  { num: "02", text: "Calm strategy" },
+  { num: "03", text: "Minimalistic execution" },
+  { num: "04", text: "Elegance in growth" },
 ];
 
 const approach = [
   {
     step: "01",
-    title: "Listen Deeply",
-    desc: "We begin with conversations, not assumptions.",
+    title: "Deep Understanding",
+    desc: "We start by understanding your brand, your audience, and your goals at the deepest level.",
   },
   {
     step: "02",
-    title: "Build Strategically",
-    desc: "Every step is rooted in brand purpose and growth clarity.",
+    title: "Strategic Mapping",
+    desc: "Every step is mapped with intention — no random tactics, only aligned direction.",
   },
   {
     step: "03",
-    title: "Create Thoughtfully",
-    desc: "From messaging to visuals, everything we craft is minimal, aligned, and built to last.",
+    title: "Structured Execution",
+    desc: "No chaos. No random posting. No vanity growth. Only aligned expansion.",
   },
   {
     step: "04",
-    title: "Grow with You",
-    desc: "Our role doesn't end at launch. We offer ongoing consulting and collaboration as your brand evolves.",
+    title: "Sustainable Scaling",
+    desc: "Growth that lasts. We build systems that scale without losing alignment.",
   },
 ];
 
@@ -148,20 +148,20 @@ export default function AboutContent() {
   return (
     <>
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-screen flex items-end bg-dark pt-40 pb-16 md:pb-24 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-end bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <div className="grid md:grid-cols-12 gap-10 items-end">
+          <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
             <div className="md:col-span-7">
-              <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-6">About Diraav</p>
-              <h1 className="hero-h font-heading text-snow text-[clamp(2.5rem,8vw,5.5rem)] tracking-tight leading-[0.95] mb-8" style={{ opacity: 0 }}>
-                Grounded in Purpose,<br />Built for Visionaries
+              <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">About Diraav</p>
+              <h1 className="hero-h font-heading text-snow text-[clamp(2.2rem,7vw,5.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8" style={{ opacity: 0 }}>
+                Rooted in Strategy.<br />Built With Intention.
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
               <p className="hero-p1 font-body text-snow/60 text-base md:text-lg leading-relaxed max-w-xl mb-4" style={{ opacity: 0 }}>
-                At Diraav, we believe that every brand holds a soul &mdash; an essence that goes beyond logos, colors, or campaigns. It&apos;s the why behind what you do, the story waiting to be told.
+                Diraav was built on a simple belief &mdash; great brands aren&apos;t rushed. They&apos;re built with clarity. What started as marketing services evolved into something deeper: strategic consulting for brands that want to grow intentionally, not chaotically.
               </p>
               <p className="hero-p2 font-body text-snow/50 text-sm md:text-base leading-relaxed max-w-xl" style={{ opacity: 0 }}>
-                We&apos;re not just a service provider &mdash; we&apos;re your thought partner, your creative sounding board, and your brand&apos;s quiet strength.
+                We don&apos;t chase trends. We build foundations.
               </p>
             </div>
 
@@ -177,9 +177,9 @@ export default function AboutContent() {
       </section>
 
       {/* Founder section */}
-      <section className="py-20 md:py-28 bg-dark border-t border-snow/10">
+      <section className="py-16 md:py-28 bg-dark border-t border-snow/10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-center">
             <div className="md:col-span-5 relative">
               <AnimatedImage
                 src="/portfolio/Untitled design (13).png"
@@ -189,14 +189,15 @@ export default function AboutContent() {
             </div>
             <div className="md:col-span-7 md:pl-8">
               <p className="font-body text-teal text-xs tracking-[0.2em] uppercase mb-6">Meet the Founder</p>
-              <h2 className="font-heading text-snow text-[clamp(2rem,4vw,3rem)] tracking-tight leading-[1.1] mb-6">
-                Vinita
+              <h2 className="font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-2">
+                Vinita Khadka
               </h2>
+              <p className="font-body text-teal/70 text-sm mb-6">Founder &amp; Strategist</p>
               <p className="font-body text-snow/60 text-base leading-relaxed mb-4">
-                From strategy to storytelling, every step we take is collaborative and intentional. Because we don&apos;t just build brands &mdash; we co-create dream projects that feel deeply aligned, rooted in purpose, and ready to grow.
+                A marketer, consultant, and builder at heart. Vinita believes in structured growth, calm scaling, and building brands that feel aligned &mdash; not overwhelming.
               </p>
               <p className="font-body text-snow/50 text-sm leading-relaxed">
-                Whether you&apos;re building from scratch or seeking clarity in the chaos, we bring a grounded approach to branding, content, and growth &mdash; so your brand feels as intentional as the vision behind it.
+                With experience in marketing, website systems, brand positioning, and strategies, she brings both creative and growth thinking to every project. This isn&apos;t just an agency. It&apos;s a strategic partner.
               </p>
             </div>
           </div>
@@ -206,17 +207,17 @@ export default function AboutContent() {
       {/* Philosophy */}
       <section className="py-20 md:py-28 bg-dark border-t border-snow/10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-4">
-              <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-4">Our Philosophy</p>
-              <h2 className="font-heading text-snow text-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
-                What we believe in
+              <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-4">The Meaning of Diraav</p>
+              <h2 className="font-heading text-snow text-[clamp(1.5rem,4vw,2.5rem)] tracking-tight">
+                Diraav stands for
               </h2>
             </div>
-            <div ref={philRef} className="md:col-span-8 grid sm:grid-cols-2 gap-8">
+            <div ref={philRef} className="md:col-span-8 grid sm:grid-cols-2 gap-5 md:gap-8">
               {philosophy.map((item, i) => (
                 <div key={i} className="phil-item border-l-2 border-teal/30 pl-6 py-2" style={{ opacity: 0 }}>
-                  <span className="font-body text-teal/50 text-xs tracking-wider block mb-2">{item.num}</span>
+                  <span className="font-body text-snow text-xs tracking-wider block mb-2">{item.num}</span>
                   <p className="font-heading text-snow text-xl md:text-2xl">{item.text}</p>
                 </div>
               ))}
@@ -237,7 +238,7 @@ export default function AboutContent() {
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <p className="font-heading text-white text-[clamp(1.5rem,3vw,2.5rem)] text-center italic max-w-2xl px-6">
-            &ldquo;We don&apos;t just build brands &mdash; we co-create dream projects that feel deeply aligned.&rdquo;
+            &ldquo;We work slowly, strategically, and deliberately.&rdquo;
           </p>
         </div>
       </section>
@@ -246,16 +247,16 @@ export default function AboutContent() {
       <section className="py-20 md:py-28 bg-dark">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-4">Our Approach</p>
+            <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-4">Our Approach</p>
             <h2 className="font-heading text-snow text-[clamp(1.5rem,3vw,2.5rem)] tracking-tight max-w-lg">
               We don&apos;t believe in one-size-fits-all
             </h2>
           </div>
 
-          <div ref={approachRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div ref={approachRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
             {approach.map((item) => (
               <div key={item.step} className="approach-card group" style={{ opacity: 0 }}>
-                <span className="font-heading text-teal/20 text-6xl font-semibold block mb-4 group-hover:text-teal/40 transition-colors duration-300">
+                <span className="font-heading text-snow text-4xl md:text-6xl font-semibold block mb-4 group-hover:text-teal/40 transition-colors duration-300">
                   {item.step}
                 </span>
                 <h3 className="font-heading text-snow text-xl mb-3 group-hover:text-teal transition-colors duration-300">
@@ -286,16 +287,16 @@ export default function AboutContent() {
       {/* Testimonials */}
       <section className="py-20 md:py-28 bg-dark border-t border-snow/10">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-4">What Our Clients Say</p>
+          <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-4">What Our Clients Say</p>
           <h2 className="font-heading text-snow text-[clamp(1.5rem,3vw,2.5rem)] tracking-tight mb-14">
             Trusted by brands with purpose
           </h2>
 
-          <div ref={testRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div ref={testRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="test-card rounded-2xl p-8 border border-snow/10 bg-snow/[0.03] hover:border-teal/20 transition-colors duration-300"
+                className="test-card rounded-2xl p-5 md:p-8 border border-snow/10 bg-snow/[0.03] hover:border-teal/20 transition-colors duration-300"
                 style={{ opacity: 0 }}
               >
                 {/* Stars */}
@@ -316,24 +317,6 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 md:py-28 bg-dark border-t border-snow/10">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="font-body text-snow/40 text-xs tracking-[0.2em] uppercase mb-6">Ready to start?</p>
-          <h2 className="font-heading text-snow text-[clamp(2rem,5vw,4rem)] tracking-tight mb-8">
-            Let&apos;s turn your idea<br />into a dream project.
-          </h2>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-3 font-body text-snow border border-snow/20 px-8 py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
-          >
-            Get in Touch
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-        </div>
-      </section>
     </>
   );
 }

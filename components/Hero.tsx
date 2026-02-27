@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 
-const taglines = ["We listen.", "We strategize.", "We create.", "We grow."];
+const taglines = ["Structured growth", "Rooted branding", "Calm execution", "Long-term positioning"];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,6 +30,12 @@ export default function Hero() {
           ease: "power3.out",
         }
       );
+
+      // Subheading fade in
+      const sub = sectionRef.current.querySelector(".hero-sub");
+      if (sub) {
+        tl.fromTo(sub, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.4");
+      }
 
       // Tagline items stagger in
       const items = taglineRef.current.querySelectorAll(".tagline-item");
@@ -84,29 +90,32 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
 
       {/* Main heading — bottom left */}
-      <div className="relative z-10 px-6 md:px-10 mb-8 md:mb-10 max-w-4xl">
-        <h1 ref={headingRef} className="font-heading text-white font-bold leading-[1.05] text-[clamp(2.5rem,6vw,5rem)]">
+      <div className="relative z-10 px-4 sm:px-6 md:px-10 mb-6 md:mb-10 max-w-4xl">
+        <h1 ref={headingRef} className="font-heading text-white font-bold leading-[1.05] text-[clamp(2rem,5.5vw,5rem)] mb-4 md:mb-5">
           {headingWords.map((word, i) => (
             <span key={i} className="inline-block overflow-hidden mr-[0.25em] pb-[0.15em]">
               <span className="hero-word inline-block">{word}</span>
             </span>
           ))}
         </h1>
+        <p className="hero-sub font-body text-white/60 text-base md:text-lg leading-relaxed max-w-2xl" style={{ opacity: 0 }}>
+          Strategic marketing and consulting for founders, creators, and growing brands who are ready to build with clarity, structure, and intention.
+        </p>
       </div>
 
       {/* Bottom tagline row */}
       <div
         ref={taglineRef}
-        className="relative z-10 grid grid-cols-2 md:grid-cols-4 border-t border-white/20"
+        className="relative z-10 grid grid-cols-2 md:grid-cols-4 border-t border-white/20 text-sm sm:text-base"
       >
         {taglines.map((tag, i) => (
           <div
             key={i}
-            className={`tagline-item px-6 md:px-10 py-5 md:py-6 ${
+            className={`tagline-item px-3 sm:px-6 md:px-10 py-4 md:py-6 ${
               i < taglines.length - 1 ? "border-r border-white/20" : ""
             }`}
           >
-            <span className="font-heading text-white text-lg md:text-xl font-medium">
+            <span className="font-heading text-white text-base md:text-xl font-medium">
               {tag}
             </span>
           </div>

@@ -10,7 +10,7 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/#portfolio" },
-  { label: "Blog", href: "/#blog" },
+  { label: "Journal", href: "/journal" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -112,7 +112,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <nav className="fixed top-0 left-0 w-full z-50 px-6 md:px-10 py-5 flex items-center justify-between pointer-events-none">
+      <nav className="fixed top-0 left-0 w-full z-50 px-4 md:px-6 lg:px-10 py-5 flex items-center justify-between pointer-events-none">
         {/* Logo */}
         <a
           href="/"
@@ -132,7 +132,7 @@ export default function Navbar() {
             alt="Diraav"
             width={400}
             height={200}
-            className={`h-20 md:h-24 w-auto transition-[filter] duration-500 ${
+            className={`h-14 sm:h-20 md:h-24 w-auto transition-[filter] duration-500 ${
               logoWhite ? "brightness-0 invert" : "brightness-0"
             }`}
             priority
@@ -194,7 +194,7 @@ export default function Navbar() {
       >
         <div className="flex h-full">
           {/* Left Side — Navigation Links */}
-          <div className="w-full lg:w-1/2 bg-dark flex flex-col justify-between px-10 md:px-16 py-28">
+          <div className="w-full lg:w-1/2 bg-dark flex flex-col justify-between px-6 md:px-10 lg:px-16 py-24 md:py-28">
             <div ref={linksRef} className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
@@ -203,7 +203,7 @@ export default function Navbar() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className="nav-link-item group flex items-center justify-between py-4 border-b border-snow/10 hover:border-teal/40 transition-colors"
                 >
-                  <span className="font-heading text-snow text-[clamp(1.5rem,3vw,2.5rem)] group-hover:text-teal transition-colors duration-300">
+                  <span className="font-heading text-snow text-[clamp(1.8rem,4vw,2.5rem)] group-hover:text-teal transition-colors duration-300">
                     {link.label}
                   </span>
                   <svg
@@ -229,7 +229,7 @@ export default function Navbar() {
                 hello@diraav.com
               </p>
               <p className="font-body text-snow/40 text-sm">
-                Dubai, UAE &middot; India
+                Lonavala, Pune &middot; India
               </p>
             </div>
           </div>

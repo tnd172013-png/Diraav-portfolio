@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import AboutContent from "@/components/about/AboutContent";
+import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
   title: "About Us | Diraav",
   description:
-    "At Diraav, we believe that every brand holds a soul. We're your thought partner, creative sounding board, and your brand's quiet strength.",
+    "Rooted in strategy, built with intention. Diraav is a strategic consulting partner for brands that want to grow intentionally, not chaotically.",
 };
 
 export default function AboutPage() {
@@ -14,6 +15,7 @@ export default function AboutPage() {
       <Navbar />
       <main>
         <AboutContent />
+        <Contact />
       </main>
     </>
   );

@@ -44,12 +44,12 @@ export default function Clientele() {
     <section
       ref={sectionRef}
       id="clientele"
-      className="py-24 md:py-32 bg-dark overflow-hidden"
+      className="pt-10 pb-6 md:pt-14 md:pb-8 bg-dark overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 mb-14 md:mb-20">
+      <div className="max-w-7xl mx-auto px-6 mb-6 md:mb-8">
         <TextReveal
           as="h2"
-          className="font-heading text-snow text-[clamp(2rem,4vw,3.5rem)] tracking-tight"
+          className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight"
         >
           Our Clientele
         </TextReveal>
@@ -72,7 +72,7 @@ export default function Clientele() {
             (logo, i) => (
               <div
                 key={i}
-                className="shrink-0 flex items-center justify-center h-16 md:h-20 w-36 md:w-44 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="shrink-0 flex items-center justify-center h-12 sm:h-16 md:h-20 w-28 sm:w-36 md:w-44 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-[filter,opacity] duration-500"
               >
                 <img
                   src={logo.src}

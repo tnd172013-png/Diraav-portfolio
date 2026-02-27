@@ -37,7 +37,7 @@ const contactInfo = [
 ];
 
 const socials = [
-  { label: "Instagram", href: "https://instagram.com/diraav" },
+  { label: "Instagram", href: "https://instagram.com/diraav_com" },
   { label: "LinkedIn", href: "https://linkedin.com/company/diraav" },
   { label: "Behance", href: "https://behance.net/diraav" },
 ];
@@ -127,17 +127,17 @@ export default function ContactContent() {
   return (
     <>
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-[70vh] flex items-end bg-dark pt-40 pb-16 md:pb-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <div className="grid md:grid-cols-12 gap-10 items-end">
+      <section ref={heroRef} className="relative min-h-[70vh] flex items-end bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
+          <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
             <div className="md:col-span-7">
-              <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-6">Get in Touch</p>
-              <h1 className="hero-h font-heading text-snow text-[clamp(2.5rem,8vw,5.5rem)] tracking-tight leading-[0.95] mb-8" style={{ opacity: 0 }}>
-                Let&apos;s Start a<br />Conversation
+              <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">Get in Touch</p>
+              <h1 className="hero-h font-heading text-snow text-[clamp(2.2rem,7vw,5.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8" style={{ opacity: 0 }}>
+                Let&apos;s Build Something<br />Intentional.
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
               <p className="hero-p1 font-body text-snow/60 text-base md:text-lg leading-relaxed max-w-xl" style={{ opacity: 0 }}>
-                Whether you&apos;re looking to build a brand from scratch or need strategic clarity for what&apos;s next &mdash; we&apos;re here to listen, collaborate, and create something meaningful together.
+                If you&apos;re ready to build with clarity and structure, we&apos;d love to hear from you.
               </p>
             </div>
 
@@ -153,17 +153,17 @@ export default function ContactContent() {
       </section>
 
       {/* Contact info + Form */}
-      <section className="py-24 md:py-32 bg-dark border-t border-snow/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
+      <section className="py-16 md:py-24 lg:py-32 bg-dark border-t border-snow/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20">
             {/* Left — Info & Socials */}
             <div className="lg:col-span-5">
-              <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-6">Contact Details</p>
-              <h2 className="font-heading text-snow text-[clamp(1.5rem,3vw,2.5rem)] tracking-tight mb-12">
+              <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">Contact Details</p>
+              <h2 className="font-heading text-snow text-[clamp(1.5rem,4vw,2.5rem)] tracking-tight mb-8 md:mb-12">
                 Reach out anytime
               </h2>
 
-              <div ref={infoRef} className="space-y-8 mb-16">
+              <div ref={infoRef} className="space-y-6 md:space-y-8 mb-10 md:mb-16">
                 {contactInfo.map((item, i) => {
                   const content = (
                     <div className="info-card group flex items-start gap-5" style={{ opacity: 0 }}>
@@ -171,7 +171,7 @@ export default function ContactContent() {
                         {item.icon}
                       </div>
                       <div>
-                        <span className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase block mb-1">{item.label}</span>
+                        <span className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-1">{item.label}</span>
                         <span className="font-body text-snow/80 text-base whitespace-pre-line group-hover:text-snow transition-colors duration-300">
                           {item.value}
                         </span>
@@ -191,7 +191,7 @@ export default function ContactContent() {
 
               {/* Social links */}
               <div ref={socialsRef}>
-                <p className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase mb-5">Follow Us</p>
+                <p className="font-body text-snow text-xs tracking-[0.15em] uppercase mb-5">Follow Us</p>
                 <div className="flex flex-col gap-3">
                   {socials.map((s, i) => (
                     <a
@@ -222,9 +222,9 @@ export default function ContactContent() {
 
             {/* Right — Form */}
             <div className="lg:col-span-7">
-              <form ref={formRef} className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+              <form ref={formRef} className="space-y-6 md:space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="form-el" style={{ opacity: 0 }}>
-                  <label className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase block mb-3">
+                  <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
                     Your Name
                   </label>
                   <input
@@ -235,7 +235,7 @@ export default function ContactContent() {
                 </div>
 
                 <div className="form-el" style={{ opacity: 0 }}>
-                  <label className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase block mb-3">
+                  <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
                     Email Address
                   </label>
                   <input
@@ -246,7 +246,7 @@ export default function ContactContent() {
                 </div>
 
                 <div className="form-el" style={{ opacity: 0 }}>
-                  <label className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase block mb-3">
+                  <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
                     Subject
                   </label>
                   <input
@@ -257,7 +257,7 @@ export default function ContactContent() {
                 </div>
 
                 <div className="form-el" style={{ opacity: 0 }}>
-                  <label className="font-body text-snow/30 text-xs tracking-[0.15em] uppercase block mb-3">
+                  <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
                     Message
                   </label>
                   <textarea
@@ -270,7 +270,7 @@ export default function ContactContent() {
                 <div className="form-el pt-4" style={{ opacity: 0 }}>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-3 font-body text-snow border border-snow/20 px-8 py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
+                    className="inline-flex items-center gap-3 font-body text-snow border border-snow/20 px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
                   >
                     Send Message
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,16 +295,16 @@ export default function ContactContent() {
           <div className="absolute inset-0 bg-dark/60" />
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <p className="font-heading text-white text-[clamp(1.5rem,3vw,2.5rem)] text-center italic max-w-2xl px-6">
+          <p className="font-heading text-white text-[clamp(1.5rem,4vw,2.5rem)] text-center italic max-w-2xl px-6">
             &ldquo;Every great brand starts with a conversation.&rdquo;
           </p>
         </div>
       </section>
 
       {/* Map / Location note */}
-      <section className="py-24 md:py-32 bg-dark border-t border-snow/10">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="font-body text-snow/30 text-xs tracking-[0.2em] uppercase mb-6">Based in</p>
+      <section className="py-16 md:py-24 lg:py-32 bg-dark border-t border-snow/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">Based in</p>
           <h2 className="font-heading text-snow text-[clamp(2rem,5vw,4rem)] tracking-tight mb-6">
             Lonavala, India
           </h2>
@@ -312,7 +312,7 @@ export default function ContactContent() {
             Nestled in the hills, working with brands everywhere.
           </p>
           <p className="font-body text-snow/30 text-sm">
-            Dubai, UAE &middot; India
+            Lonavala, Pune &middot; India
           </p>
         </div>
       </section>

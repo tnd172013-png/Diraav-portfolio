@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TextReveal from "@/components/ui/TextReveal";
 
 const blogs = [
   {
+    slug: "website-essentials-service-brand-2025",
     category: "Web Design",
     title: "5 Website Essentials Every Service Brand Needs to Convert in 2025",
     excerpt:
@@ -14,6 +16,7 @@ const blogs = [
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
   },
   {
+    slug: "social-media-engagement-dropping-2025",
     category: "Social Media",
     title: "Why Your Social Media Engagement Is Dropping in 2025",
     excerpt:
@@ -22,6 +25,7 @@ const blogs = [
       "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
   },
   {
+    slug: "free-tools-marketing-agency-2025",
     category: "Tools & Resources",
     title: "8 Free Tools That Run Our Small Marketing Agency in 2025",
     excerpt:
@@ -41,16 +45,16 @@ export default function Blog() {
       const cards = gridRef.current.querySelectorAll(".blog-card");
       gsap.fromTo(
         cards,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: "power2.out",
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: gridRef.current,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
@@ -64,20 +68,21 @@ export default function Blog() {
       <div className="max-w-7xl mx-auto px-6">
         <TextReveal
           as="h2"
-          className="font-heading text-snow text-[clamp(2rem,4vw,3.5rem)] tracking-tight mb-4"
+          className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"
         >
           The Journal
         </TextReveal>
-        <p className="text-snow/40 font-body text-lg max-w-xl mb-16">
+        <p className="text-snow/40 font-body text-base md:text-lg max-w-xl mb-10 md:mb-16">
           Thoughts, insights, and resources for purpose-driven brands.
         </p>
 
         <div ref={gridRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {blogs.map((blog, i) => (
-            <article
-              key={i}
+          {blogs.map((blog) => (
+            <Link
+              key={blog.slug}
+              href={`/journal/${blog.slug}`}
               className="blog-card group rounded-2xl overflow-hidden border border-snow/10 bg-snow/5 hover:border-teal/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal/5"
-              style={{ opacity: 0, transform: "translateY(40px)" }}
+              style={{ opacity: 0, transform: "translateY(30px)" }}
             >
               {/* Blog Image */}
               <div className="aspect-[16/10] relative overflow-hidden">
@@ -90,11 +95,11 @@ export default function Blog() {
                 <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-500" />
               </div>
 
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 <span className="text-teal font-body text-xs tracking-[0.15em] uppercase font-medium">
                   {blog.category}
                 </span>
-                <h3 className="font-heading text-snow text-lg mt-3 mb-3 leading-snug group-hover:text-teal transition-colors duration-300">
+                <h3 className="font-heading text-snow text-base md:text-lg mt-3 mb-3 leading-snug group-hover:text-teal transition-colors duration-300">
                   {blog.title}
                 </h3>
                 <p className="text-snow/40 font-body text-sm leading-relaxed mb-4">
@@ -117,16 +122,16 @@ export default function Blog() {
                   </svg>
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="#"
+          <Link
+            href="/journal"
             className="inline-flex items-center gap-2 text-teal font-body text-sm font-medium border border-teal/30 px-8 py-3 rounded-full hover:bg-teal hover:text-snow transition-all duration-300"
           >
-            Explore All Blogs
+            Explore All Articles
             <svg
               className="w-4 h-4"
               fill="none"
@@ -140,7 +145,7 @@ export default function Blog() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

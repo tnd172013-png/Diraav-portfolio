@@ -260,3 +260,6 @@ website diraav/
 8. Smooth scroll works globally (Lenis)
 9. Navigation anchor links scroll to correct sections
 10. Performance: no layout shift, animations at 60fps
+
+
+#f8f9f9
