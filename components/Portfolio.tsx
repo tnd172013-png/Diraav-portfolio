@@ -221,7 +221,7 @@ export default function Portfolio() {
       {/* Horizontal Gallery */}
       <div
         ref={galleryRef}
-        className="flex gap-2 sm:gap-3 md:gap-4 px-3 sm:px-6 md:px-10"
+        className="flex overflow-hidden gap-2 sm:gap-3 md:gap-4 px-3 sm:px-6 md:px-10"
       >
         {portfolioItems.map((item, i) => (
           <PortfolioCard key={i} item={item} />
