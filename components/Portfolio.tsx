@@ -139,7 +139,7 @@ function PortfolioCard({
       style={{
         flexGrow: 1,
         flexBasis: 0,
-        minWidth: "140px",
+        minWidth: "100px",
         borderRadius: "80px 80px 24px 24px",
       }}
     >
@@ -205,8 +205,8 @@ export default function Portfolio() {
   );
 
   return (
-    <section ref={sectionRef} id="portfolio" className="py-24 md:py-32 bg-dark">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
+    <section ref={sectionRef} id="portfolio" className="py-16 md:py-24 lg:py-32 bg-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-16">
         <TextReveal
           as="h2"
           className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"

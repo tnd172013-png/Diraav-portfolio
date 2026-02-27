@@ -46,7 +46,7 @@ export default function Clientele() {
       id="clientele"
       className="pt-10 pb-6 md:pt-14 md:pb-8 bg-dark overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 mb-6 md:mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-6 md:mb-8">
         <TextReveal
           as="h2"
           className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight"

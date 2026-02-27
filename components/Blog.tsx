@@ -64,8 +64,8 @@ export default function Blog() {
   );
 
   return (
-    <section id="blog" className="py-24 md:py-32 bg-dark">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="blog" className="py-16 md:py-24 lg:py-32 bg-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <TextReveal
           as="h2"
           className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"

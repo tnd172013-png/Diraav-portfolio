@@ -58,7 +58,7 @@ export default function TextReveal({
         {words.map((word, i) => (
           <span
             key={i}
-            className="inline-block overflow-hidden mr-[0.25em] align-bottom"
+            className="inline-block overflow-hidden mr-[0.25em] pb-[0.15em] align-bottom"
           >
             <span
               className="word inline-block"

@@ -90,8 +90,8 @@ export default function About() {
   );
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-dark">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-16 md:py-24 lg:py-32 bg-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Top Section: Heading + About Text */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-28">
           <div>
@@ -104,7 +104,7 @@ export default function About() {
           </div>
           <div className="flex items-end">
             <FadeIn delay={0.2}>
-              <p className="text-snow/70 font-body text-lg leading-relaxed">
+              <p className="text-snow/70 font-body text-base md:text-lg leading-relaxed">
                 Most brands don&apos;t fail because they lack ideas. They fail because they lack clarity. At Diraav, we don&apos;t just &ldquo;do marketing.&rdquo; We build aligned foundations, strategic systems, and digital presence that actually convert. This is strategy with depth and marketing with intention.
               </p>
             </FadeIn>

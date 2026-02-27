@@ -50,8 +50,8 @@ export default function Contact() {
   );
 
   return (
-    <section ref={sectionRef} id="contact" className="pt-24 md:pt-32 pb-8 bg-dark">
-      <div className="max-w-3xl mx-auto px-6">
+    <section ref={sectionRef} id="contact" className="pt-16 md:pt-24 lg:pt-32 pb-8 bg-dark">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <TextReveal
           as="h2"
           className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"
@@ -111,7 +111,7 @@ export default function Contact() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-snow/5 mt-16 pt-6 pb-2 max-w-7xl mx-auto px-6">
+      <div className="border-t border-snow/5 mt-12 md:mt-16 pt-6 pb-2 max-w-7xl mx-auto px-4 sm:px-6">
         <p className="text-snow/20 font-body text-xs text-center">
           &copy; 2026 Diraav
         </p>
