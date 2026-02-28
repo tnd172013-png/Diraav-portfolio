@@ -322,7 +322,6 @@ function FloatingShape({ className }: { className: string }) {
 
 export default function ServicesContent() {
   const heroRef = useRef<HTMLElement>(null);
-  const philosophyRef = useRef<HTMLDivElement>(null);
   const helpRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -346,32 +345,6 @@ export default function ServicesContent() {
       if (stats.length) tl.fromTo(stats, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.5");
     },
     { scope: heroRef }
-  );
-
-  // Philosophy section animations
-  useGSAP(
-    () => {
-      if (!philosophyRef.current) return;
-
-      const items = philosophyRef.current.querySelectorAll(".philosophy-item");
-      gsap.fromTo(
-        items,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.12,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: philosophyRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    },
-    { scope: philosophyRef }
   );
 
   // Help section animations
@@ -462,32 +435,6 @@ export default function ServicesContent() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/50 via-transparent to-transparent" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy strip */}
-      <section className="py-16 md:py-20 bg-dark border-y border-snow/10">
-        <div ref={philosophyRef} className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6 md:gap-16">
-            {[
-              { icon: "01", text: "Structured growth" },
-              { icon: "02", text: "Rooted branding" },
-              { icon: "03", text: "Calm execution" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="philosophy-item flex items-start gap-4"
-                style={{ opacity: 0 }}
-              >
-                <span className="font-body text-teal/60 text-xs tracking-wider mt-1 shrink-0">
-                  {item.icon}
-                </span>
-                <p className="font-heading text-snow/80 text-lg md:text-xl italic">
-                  {item.text}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
