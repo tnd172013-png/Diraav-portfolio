@@ -205,7 +205,7 @@ export default function Portfolio() {
   );
 
   return (
-    <section ref={sectionRef} id="portfolio" className="py-16 md:py-24 lg:py-32 bg-dark">
+    <section ref={sectionRef} id="portfolio" className="pt-10 md:pt-14 pb-10 md:pb-14 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-16">
         <TextReveal
           as="h2"

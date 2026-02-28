@@ -64,7 +64,7 @@ export default function Blog() {
   );
 
   return (
-    <section id="blog" className="py-16 md:py-24 lg:py-32 bg-dark">
+    <section id="blog" className="pt-10 md:pt-14 pb-10 md:pb-14 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <TextReveal
           as="h2"

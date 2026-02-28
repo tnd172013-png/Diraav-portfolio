@@ -404,13 +404,13 @@ export default function ServicesContent() {
   return (
     <>
       {/* Hero with image */}
-      <section ref={heroRef} className="relative min-h-screen flex items-end bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
         {/* Floating decorative shapes */}
         <FloatingShape className="w-64 h-64 top-32 -right-20 opacity-30" />
         <FloatingShape className="w-40 h-40 top-60 left-10 opacity-20" />
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <div className="grid md:grid-cols-12 gap-8 items-end">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
             {/* Left — Text */}
             <div className="md:col-span-7">
               <h1

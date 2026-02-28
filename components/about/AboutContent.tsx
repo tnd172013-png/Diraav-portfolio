@@ -148,9 +148,9 @@ export default function AboutContent() {
   return (
     <>
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-screen flex items-end bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center bg-dark pt-32 md:pt-40 pb-12 md:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+          <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
             <div className="md:col-span-7">
               <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">About Diraav</p>
               <h1 className="hero-h font-heading text-snow text-[clamp(2.2rem,7vw,5.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8" style={{ opacity: 0 }}>

@@ -140,7 +140,7 @@ export default function Services() {
   );
 
   return (
-    <section id="services" className="py-16 md:py-24 lg:py-32 bg-dark">
+    <section id="services" className="pt-16 md:pt-24 lg:pt-32 pb-10 md:pb-14 bg-dark">
       {/* Services — Frysta style: heading left, grid right */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-[1fr_3fr] gap-8 md:gap-16">

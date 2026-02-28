@@ -90,7 +90,7 @@ export default function About() {
   );
 
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-32 bg-dark">
+    <section id="about" className="pt-16 md:pt-24 lg:pt-32 pb-10 md:pb-14 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Top Section: Heading + About Text */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-28">

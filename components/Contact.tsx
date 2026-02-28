@@ -1,46 +1,119 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import Image from "next/image";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TextReveal from "@/components/ui/TextReveal";
 
+const contactInfo = [
+  {
+    label: "Address",
+    value: "Valvan, Lonavala,\nPune — 410403",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Phone",
+    value: "+91 7823082963",
+    href: "tel:+917823082963",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Email",
+    value: "diraav.com@gmail.com",
+    href: "mailto:diraav.com@gmail.com",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+      </svg>
+    ),
+  },
+];
+
+const socials = [
+  { label: "Instagram", href: "https://instagram.com/diraav_com" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/diraav" },
+  { label: "Behance", href: "https://behance.net/diraav" },
+];
+
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
+  const infoRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const socialsRef = useRef<HTMLDivElement>(null);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic here
-  };
-
+  // Contact info stagger
   useGSAP(
     () => {
-      if (!sectionRef.current || !formRef.current) return;
-
+      if (!infoRef.current) return;
       gsap.fromTo(
-        formRef.current,
-        { opacity: 0, y: 40 },
+        infoRef.current.querySelectorAll(".info-card"),
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          delay: 0.3,
+          duration: 0.6,
+          stagger: 0.12,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
+            trigger: infoRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    },
+    { scope: sectionRef }
+  );
+
+  // Form entrance
+  useGSAP(
+    () => {
+      if (!formRef.current) return;
+      gsap.fromTo(
+        formRef.current.querySelectorAll(".form-el"),
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.08,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    },
+    { scope: sectionRef }
+  );
+
+  // Socials entrance
+  useGSAP(
+    () => {
+      if (!socialsRef.current) return;
+      gsap.fromTo(
+        socialsRef.current.querySelectorAll(".social-link"),
+        { opacity: 0, x: -20 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: socialsRef.current,
+            start: "top 90%",
             toggleActions: "play none none none",
           },
         }
@@ -50,71 +123,143 @@ export default function Contact() {
   );
 
   return (
-    <section ref={sectionRef} id="contact" className="pt-16 md:pt-24 lg:pt-32 pb-8 bg-dark">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <TextReveal
-          as="h2"
-          className="font-heading text-snow text-[clamp(2rem,5vw,3.5rem)] tracking-tight mb-4"
-        >
-          Let&apos;s Build Something Intentional
-        </TextReveal>
-        <p className="text-mist font-body text-base md:text-lg max-w-xl mb-10 md:mb-12">
-          If you&apos;re ready to build with clarity and structure, we&apos;d love to hear from you.
-        </p>
+    <section ref={sectionRef} id="contact" className="pt-14 md:pt-20 pb-0 bg-dark border-t border-snow/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-12 gap-10 md:gap-16 lg:gap-20">
+          {/* Left — Info & Socials */}
+          <div className="lg:col-span-5">
+            <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">Contact Details</p>
+            <TextReveal
+              as="h2"
+              className="font-heading text-snow text-[clamp(1.5rem,4vw,2.5rem)] tracking-tight mb-8 md:mb-12"
+            >
+              Reach out anytime
+            </TextReveal>
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="space-y-6"
-          style={{ opacity: 0 }}
-        >
-          <div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-mist focus:border-teal focus:outline-none transition-colors"
-            />
+            <div ref={infoRef} className="space-y-6 md:space-y-8 mb-10 md:mb-16">
+              {contactInfo.map((item, i) => {
+                const content = (
+                  <div className="info-card group flex items-start gap-5" style={{ opacity: 0 }}>
+                    <div className="w-12 h-12 rounded-full border border-snow/10 bg-snow/[0.03] flex items-center justify-center text-teal shrink-0 group-hover:border-teal/30 transition-colors duration-300">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <span className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-1">
+                        {item.label}
+                      </span>
+                      <span className="font-body text-mist text-base whitespace-pre-line group-hover:text-snow transition-colors duration-300">
+                        {item.value}
+                      </span>
+                    </div>
+                  </div>
+                );
+
+                return item.href ? (
+                  <a key={i} href={item.href} className="block">
+                    {content}
+                  </a>
+                ) : (
+                  <div key={i}>{content}</div>
+                );
+              })}
+            </div>
+
+            {/* Social links */}
+            <div ref={socialsRef}>
+              <p className="font-body text-snow text-xs tracking-[0.15em] uppercase mb-5">Follow Us</p>
+              <div className="flex flex-col gap-3">
+                {socials.map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link group flex items-center justify-between py-3 border-b border-snow/10 hover:border-teal/30 transition-colors duration-300"
+                    style={{ opacity: 0 }}
+                  >
+                    <span className="font-body text-mist text-sm group-hover:text-snow transition-colors duration-300">
+                      {s.label}
+                    </span>
+                    <svg
+                      className="w-4 h-4 text-mist group-hover:text-teal transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-          <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-mist focus:border-teal focus:outline-none transition-colors"
-            />
+
+          {/* Right — Form */}
+          <div className="lg:col-span-7">
+            <form ref={formRef} className="space-y-6 md:space-y-8" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-el" style={{ opacity: 0 }}>
+                <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
+                />
+              </div>
+
+              <div className="form-el" style={{ opacity: 0 }}>
+                <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  placeholder="john@example.com"
+                  className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
+                />
+              </div>
+
+              <div className="form-el" style={{ opacity: 0 }}>
+                <label className="font-body text-snow text-xs tracking-[0.15em] uppercase block mb-3">
+                  Message
+                </label>
+                <textarea
+                  rows={5}
+                  placeholder="Tell us about your project, your vision, or just say hello..."
+                  className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300 resize-none"
+                />
+              </div>
+
+              <div className="form-el pt-4" style={{ opacity: 0 }}>
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-3 font-body text-snow border border-snow/20 px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
+                >
+                  Send Message
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </button>
+              </div>
+            </form>
           </div>
-          <div>
-            <textarea
-              name="message"
-              placeholder="Tell us about your project"
-              required
-              rows={4}
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-mist focus:border-teal focus:outline-none transition-colors resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-teal text-snow font-body text-sm font-medium px-6 md:px-10 py-3 md:py-4 rounded-full hover:bg-teal/80 transition-colors duration-300 mt-4"
-          >
-            Send Message
-          </button>
-        </form>
+        </div>
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-snow/5 mt-12 md:mt-16 pt-6 pb-2 max-w-7xl mx-auto px-4 sm:px-6">
-        <p className="text-mist font-body text-xs text-center">
-          &copy; 2026 Diraav
-        </p>
+      <div className="border-t border-snow/5 mt-12 md:mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <Image
+            src="/logo.png"
+            alt="Diraav"
+            width={140}
+            height={50}
+            className="h-10 w-auto brightness-0 invert"
+          />
+          <p className="text-mist font-body text-xs">
+            &copy; 2026 Diraav
+          </p>
+        </div>
       </div>
     </section>
   );

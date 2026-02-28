@@ -1,0 +1,8 @@
+there are a lot of spacing issue in diraav . a lot of blank spaces in the website. 
+instances of blank spaces 
+1.after what we do and before features projects
+2.after client and before journal
+3.after journal ad before footer
+also wherever there is snow white even with opacity 100%. make it #fbfdfe 
+in every other pages like servics journal contact every hero section . should have the content should be centre to the image. 
+change the footer of only home page same as contact page  reach out anytime section
