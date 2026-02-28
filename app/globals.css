@@ -2,6 +2,7 @@
 
 @theme {
   --color-snow: #d1dbeb;
+  --color-mist: #fbfdfe;
   --color-lavender: #d1dbeb;
   --color-sage: #829595;
   --color-slate: #596673;
@@ -39,6 +40,7 @@
   html.theme-light {
     --color-dark: #d1dbeb;
     --color-snow: #151f28;
+    --color-mist: #2a3a4a;
   }
 
   /* Keep footer always dark regardless of theme */

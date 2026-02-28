@@ -13,7 +13,7 @@ export default function Footer() {
           height={50}
           className="h-10 w-auto brightness-0 invert"
         />
-        <p className="text-snow/20 font-body text-xs">
+        <p className="text-mist font-body text-xs">
           &copy; 2026 Diraav
         </p>
       </div>

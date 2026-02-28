@@ -207,7 +207,7 @@ export default function Navbar() {
                     {link.label}
                   </span>
                   <svg
-                    className="w-5 h-5 text-snow/30 group-hover:text-teal transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                    className="w-5 h-5 text-mist group-hover:text-teal transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -228,7 +228,7 @@ export default function Navbar() {
               <p className="font-body text-snow font-medium text-lg mb-1">
                 hello@diraav.com
               </p>
-              <p className="font-body text-snow/40 text-sm">
+              <p className="font-body text-mist text-sm">
                 Lonavala, Pune &middot; India
               </p>
             </div>

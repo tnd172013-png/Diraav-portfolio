@@ -262,7 +262,7 @@ function ServiceBlock({
               {service.tagline}
             </p>
             <p
-              className="service-desc font-body text-snow/60 text-sm md:text-base leading-relaxed max-w-lg mb-10"
+              className="service-desc font-body text-mist text-sm md:text-base leading-relaxed max-w-lg mb-10"
               style={{ opacity: 0 }}
             >
               {service.description}
@@ -281,7 +281,7 @@ function ServiceBlock({
                     style={{ opacity: 0 }}
                   >
                     <span className="w-6 h-px bg-snow/20 group-hover:w-10 group-hover:bg-teal transition-all duration-300 shrink-0" />
-                    <span className="font-body text-snow/70 text-sm group-hover:text-snow transition-colors duration-300">
+                    <span className="font-body text-mist text-sm group-hover:text-snow transition-colors duration-300">
                       {item}
                     </span>
                   </div>
@@ -424,7 +424,7 @@ export default function ServicesContent() {
                 style={{ transform: "scaleX(0)" }}
               />
               <p
-                className="hero-sub font-body text-snow/50 text-base md:text-lg max-w-xl leading-relaxed mb-10"
+                className="hero-sub font-body text-mist text-base md:text-lg max-w-xl leading-relaxed mb-10"
                 style={{ opacity: 0 }}
               >
                 At Diraav, every service begins with clarity. We don&apos;t execute in isolation.
@@ -551,7 +551,7 @@ export default function ServicesContent() {
                 <h3 className="font-heading text-snow text-lg md:text-2xl mb-3 group-hover:text-teal transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="font-body text-snow/50 text-sm leading-relaxed">
+                <p className="font-body text-mist text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>

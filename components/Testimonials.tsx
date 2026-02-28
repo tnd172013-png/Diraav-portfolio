@@ -109,7 +109,7 @@ export default function Testimonials() {
             style={{ opacity: 0, transform: "translateY(30px)" }}
           >
             <Stars />
-            <blockquote className="text-snow/70 font-body text-sm leading-relaxed mb-6">
+            <blockquote className="text-mist font-body text-sm leading-relaxed mb-6">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
             <p className="font-heading text-snow text-base font-medium">

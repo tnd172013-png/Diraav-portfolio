@@ -136,7 +136,7 @@ export default function ContactContent() {
                 Let&apos;s Build Something<br />Intentional.
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
-              <p className="hero-p1 font-body text-snow/60 text-base md:text-lg leading-relaxed max-w-xl" style={{ opacity: 0 }}>
+              <p className="hero-p1 font-body text-mist text-base md:text-lg leading-relaxed max-w-xl" style={{ opacity: 0 }}>
                 If you&apos;re ready to build with clarity and structure, we&apos;d love to hear from you.
               </p>
             </div>
@@ -202,11 +202,11 @@ export default function ContactContent() {
                       className="social-link group flex items-center justify-between py-3 border-b border-snow/10 hover:border-teal/30 transition-colors duration-300"
                       style={{ opacity: 0 }}
                     >
-                      <span className="font-body text-snow/70 text-sm group-hover:text-snow transition-colors duration-300">
+                      <span className="font-body text-mist text-sm group-hover:text-snow transition-colors duration-300">
                         {s.label}
                       </span>
                       <svg
-                        className="w-4 h-4 text-snow/20 group-hover:text-teal transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                        className="w-4 h-4 text-mist group-hover:text-teal transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -230,7 +230,7 @@ export default function ContactContent() {
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-snow/20 focus:outline-none focus:border-teal/50 transition-colors duration-300"
+                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                   />
                 </div>
 
@@ -241,7 +241,7 @@ export default function ContactContent() {
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-snow/20 focus:outline-none focus:border-teal/50 transition-colors duration-300"
+                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                   />
                 </div>
 
@@ -252,7 +252,7 @@ export default function ContactContent() {
                   <input
                     type="text"
                     placeholder="How can we help?"
-                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-snow/20 focus:outline-none focus:border-teal/50 transition-colors duration-300"
+                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                   />
                 </div>
 
@@ -263,7 +263,7 @@ export default function ContactContent() {
                   <textarea
                     rows={5}
                     placeholder="Tell us about your project, your vision, or just say hello..."
-                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-snow/20 focus:outline-none focus:border-teal/50 transition-colors duration-300 resize-none"
+                    className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300 resize-none"
                   />
                 </div>
 
@@ -308,10 +308,10 @@ export default function ContactContent() {
           <h2 className="font-heading text-snow text-[clamp(2rem,5vw,4rem)] tracking-tight mb-6">
             Lonavala, India
           </h2>
-          <p className="font-body text-snow/50 text-base max-w-lg mx-auto leading-relaxed mb-2">
+          <p className="font-body text-mist text-base max-w-lg mx-auto leading-relaxed mb-2">
             Nestled in the hills, working with brands everywhere.
           </p>
-          <p className="font-body text-snow/30 text-sm">
+          <p className="font-body text-mist text-sm">
             Lonavala, Pune &middot; India
           </p>
         </div>

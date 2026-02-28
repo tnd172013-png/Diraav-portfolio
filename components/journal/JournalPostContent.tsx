@@ -101,7 +101,7 @@ export default function JournalPostContent({ post }: Props) {
           {/* Back link */}
           <Link
             href="/journal"
-            className="hero-back inline-flex items-center gap-2 text-snow/40 hover:text-teal font-body text-sm mb-8 md:mb-10 transition-colors duration-300"
+            className="hero-back inline-flex items-center gap-2 text-mist hover:text-teal font-body text-sm mb-8 md:mb-10 transition-colors duration-300"
             style={{ opacity: 0 }}
           >
             <svg
@@ -141,9 +141,9 @@ export default function JournalPostContent({ post }: Props) {
             className="hero-meta flex items-center gap-3 mb-8 md:mb-10"
             style={{ opacity: 0 }}
           >
-            <span className="text-snow/40 font-body text-sm">{post.date}</span>
+            <span className="text-mist font-body text-sm">{post.date}</span>
             <span className="w-1 h-1 rounded-full bg-snow/20" />
-            <span className="text-snow/40 font-body text-sm">
+            <span className="text-mist font-body text-sm">
               {post.readTime}
             </span>
           </div>
@@ -179,7 +179,7 @@ export default function JournalPostContent({ post }: Props) {
                     {section.body.split("\n\n").map((paragraph, j) => (
                       <p
                         key={j}
-                        className="text-snow/60 font-body text-base leading-relaxed"
+                        className="text-mist font-body text-base leading-relaxed"
                       >
                         {paragraph}
                       </p>

@@ -152,7 +152,7 @@ export default function Services() {
             >
               What We Do
             </TextReveal>
-            <p className="text-snow/40 font-body text-sm leading-relaxed">
+            <p className="text-mist font-body text-sm leading-relaxed">
               We design the thinking before we build the execution.
             </p>
           </div>
@@ -161,13 +161,13 @@ export default function Services() {
           <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-14">
             {services.map((service, i) => (
               <div key={i} className="service-item" style={{ opacity: 0, transform: "translateY(30px)" }}>
-                <div className="text-snow/30 mb-6">
+                <div className="text-mist mb-6">
                   <ServiceIcon index={i} />
                 </div>
                 <h3 className="font-heading text-snow text-xl md:text-2xl mb-3">
                   {service.title}
                 </h3>
-                <p className="text-snow/50 font-body text-sm leading-relaxed">
+                <p className="text-mist font-body text-sm leading-relaxed">
                   {service.desc}
                 </p>
               </div>

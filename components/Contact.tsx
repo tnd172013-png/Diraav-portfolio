@@ -58,7 +58,7 @@ export default function Contact() {
         >
           Let&apos;s Build Something Intentional
         </TextReveal>
-        <p className="text-snow/40 font-body text-base md:text-lg max-w-xl mb-10 md:mb-12">
+        <p className="text-mist font-body text-base md:text-lg max-w-xl mb-10 md:mb-12">
           If you&apos;re ready to build with clarity and structure, we&apos;d love to hear from you.
         </p>
 
@@ -76,7 +76,7 @@ export default function Contact() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-snow/30 focus:border-teal focus:outline-none transition-colors"
+              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-mist focus:border-teal focus:outline-none transition-colors"
             />
           </div>
           <div>
@@ -87,7 +87,7 @@ export default function Contact() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-snow/30 focus:border-teal focus:outline-none transition-colors"
+              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-mist focus:border-teal focus:outline-none transition-colors"
             />
           </div>
           <div>
@@ -98,7 +98,7 @@ export default function Contact() {
               rows={4}
               value={formData.message}
               onChange={handleChange}
-              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-snow/30 focus:border-teal focus:outline-none transition-colors resize-none"
+              className="w-full bg-transparent border-b border-snow/20 text-snow font-body text-base py-4 px-0 placeholder:text-mist focus:border-teal focus:outline-none transition-colors resize-none"
             />
           </div>
           <button
@@ -112,7 +112,7 @@ export default function Contact() {
 
       {/* Copyright */}
       <div className="border-t border-snow/5 mt-12 md:mt-16 pt-6 pb-2 max-w-7xl mx-auto px-4 sm:px-6">
-        <p className="text-snow/20 font-body text-xs text-center">
+        <p className="text-mist font-body text-xs text-center">
           &copy; 2026 Diraav
         </p>
       </div>

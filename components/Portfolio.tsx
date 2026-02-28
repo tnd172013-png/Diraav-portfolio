@@ -213,7 +213,7 @@ export default function Portfolio() {
         >
           Featured Projects
         </TextReveal>
-        <p className="text-snow/40 font-body text-base md:text-lg max-w-xl">
+        <p className="text-mist font-body text-base md:text-lg max-w-xl">
           Here&apos;s what aligned execution looks like.
         </p>
       </div>

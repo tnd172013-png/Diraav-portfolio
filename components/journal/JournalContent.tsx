@@ -100,7 +100,7 @@ export default function JournalContent() {
             style={{ transform: "scaleX(0)" }}
           />
           <p
-            className="hero-p font-body text-snow/60 text-base md:text-lg leading-relaxed max-w-xl"
+            className="hero-p font-body text-mist text-base md:text-lg leading-relaxed max-w-xl"
             style={{ opacity: 0 }}
           >
             Thoughts, strategy, and practical resources for purpose-driven
@@ -140,11 +140,11 @@ export default function JournalContent() {
                       {post.category}
                     </span>
                     <span className="w-1 h-1 rounded-full bg-snow/20" />
-                    <span className="text-snow/30 font-body text-xs">
+                    <span className="text-mist font-body text-xs">
                       {post.date}
                     </span>
                     <span className="w-1 h-1 rounded-full bg-snow/20" />
-                    <span className="text-snow/30 font-body text-xs">
+                    <span className="text-mist font-body text-xs">
                       {post.readTime}
                     </span>
                   </div>
@@ -152,7 +152,7 @@ export default function JournalContent() {
                   <h2 className="font-heading text-snow text-base sm:text-lg md:text-xl leading-snug mb-3 group-hover:text-teal transition-colors duration-300">
                     {post.title}
                   </h2>
-                  <p className="text-snow/40 font-body text-sm leading-relaxed mb-5">
+                  <p className="text-mist font-body text-sm leading-relaxed mb-5">
                     {post.excerpt}
                   </p>
 

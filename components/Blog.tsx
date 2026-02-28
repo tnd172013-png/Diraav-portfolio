@@ -72,7 +72,7 @@ export default function Blog() {
         >
           The Journal
         </TextReveal>
-        <p className="text-snow/40 font-body text-base md:text-lg max-w-xl mb-10 md:mb-16">
+        <p className="text-mist font-body text-base md:text-lg max-w-xl mb-10 md:mb-16">
           Thoughts, insights, and resources for purpose-driven brands.
         </p>
 
@@ -102,7 +102,7 @@ export default function Blog() {
                 <h3 className="font-heading text-snow text-base md:text-lg mt-3 mb-3 leading-snug group-hover:text-teal transition-colors duration-300">
                   {blog.title}
                 </h3>
-                <p className="text-snow/40 font-body text-sm leading-relaxed mb-4">
+                <p className="text-mist font-body text-sm leading-relaxed mb-4">
                   {blog.excerpt}
                 </p>
                 <span className="text-teal font-body text-sm font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300">

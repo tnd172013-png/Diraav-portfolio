@@ -157,10 +157,10 @@ export default function AboutContent() {
                 Rooted in Strategy.<br />Built With Intention.
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
-              <p className="hero-p1 font-body text-snow/60 text-base md:text-lg leading-relaxed max-w-xl mb-4" style={{ opacity: 0 }}>
+              <p className="hero-p1 font-body text-mist text-base md:text-lg leading-relaxed max-w-xl mb-4" style={{ opacity: 0 }}>
                 Diraav was built on a simple belief &mdash; great brands aren&apos;t rushed. They&apos;re built with clarity. What started as marketing services evolved into something deeper: strategic consulting for brands that want to grow intentionally, not chaotically.
               </p>
-              <p className="hero-p2 font-body text-snow/50 text-sm md:text-base leading-relaxed max-w-xl" style={{ opacity: 0 }}>
+              <p className="hero-p2 font-body text-mist text-sm md:text-base leading-relaxed max-w-xl" style={{ opacity: 0 }}>
                 We don&apos;t chase trends. We build foundations.
               </p>
             </div>
@@ -193,10 +193,10 @@ export default function AboutContent() {
                 Vinita Khadka
               </h2>
               <p className="font-body text-teal/70 text-sm mb-6">Founder &amp; Strategist</p>
-              <p className="font-body text-snow/60 text-base leading-relaxed mb-4">
+              <p className="font-body text-mist text-base leading-relaxed mb-4">
                 A marketer, consultant, and builder at heart. Vinita believes in structured growth, calm scaling, and building brands that feel aligned &mdash; not overwhelming.
               </p>
-              <p className="font-body text-snow/50 text-sm leading-relaxed">
+              <p className="font-body text-mist text-sm leading-relaxed">
                 With experience in marketing, website systems, brand positioning, and strategies, she brings both creative and growth thinking to every project. This isn&apos;t just an agency. It&apos;s a strategic partner.
               </p>
             </div>
@@ -262,7 +262,7 @@ export default function AboutContent() {
                 <h3 className="font-heading text-snow text-xl mb-3 group-hover:text-teal transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-snow/50 font-body text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-mist font-body text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -307,7 +307,7 @@ export default function AboutContent() {
                     </svg>
                   ))}
                 </div>
-                <blockquote className="text-snow/60 font-body text-sm leading-relaxed mb-6">
+                <blockquote className="text-mist font-body text-sm leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <p className="font-heading text-snow text-base">{t.name}</p>
