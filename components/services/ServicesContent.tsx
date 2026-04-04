@@ -130,7 +130,6 @@ function ServiceBlock({
     () => {
       if (!blockRef.current) return;
 
-      const line = blockRef.current.querySelector(".service-line");
       const num = blockRef.current.querySelector(".service-num");
       const title = blockRef.current.querySelector(".service-title");
       const tagline = blockRef.current.querySelector(".service-tagline");
@@ -147,7 +146,6 @@ function ServiceBlock({
         },
       });
 
-      if (line) tl.fromTo(line, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" });
       if (num) tl.fromTo(num, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.4");
       if (title) tl.fromTo(title, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
       if (tagline) tl.fromTo(tagline, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, "-=0.3");
@@ -196,12 +194,6 @@ function ServiceBlock({
 
   return (
     <div ref={blockRef} className="py-16 md:py-24">
-      {/* Top line */}
-      <div
-        className="service-line h-px bg-snow/10 origin-left mb-12 md:mb-16"
-        style={{ transform: "scaleX(0)" }}
-      />
-
       <div className="grid md:grid-cols-12 gap-8 md:gap-8 items-start">
         {/* Number */}
         <div className={`md:col-span-1 ${isEven ? "md:order-1" : "md:order-1"}`}>
@@ -387,10 +379,10 @@ export default function ServicesContent() {
             {/* Left — Text */}
             <div className="md:col-span-7">
               <h1
-                className="hero-heading font-heading text-snow text-[clamp(2.5rem,8vw,6.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8"
+                className="hero-heading font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-6 md:mb-8"
                 style={{ opacity: 0 }}
               >
-                Our<br />Services
+                Insights &amp; Ideas Rooted in Strategy.<br />Built With Intention.
               </h1>
               <div
                 className="hero-line h-px bg-snow/20 origin-left mb-6"
@@ -407,7 +399,7 @@ export default function ServicesContent() {
               {/* Quick stats */}
               <div className="flex gap-6 md:gap-10 lg:gap-16">
                 {[
-                  { num: "6+", label: "Services" },
+                  { num: "6+", label: "Years of Experience" },
                   { num: "20+", label: "Projects Delivered" },
                   { num: "100%", label: "Client Retention" },
                 ].map((stat, i) => (

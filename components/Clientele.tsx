@@ -72,7 +72,7 @@ export default function Clientele() {
             (logo, i) => (
               <div
                 key={i}
-                className="shrink-0 flex items-center justify-center h-12 sm:h-16 md:h-20 w-28 sm:w-36 md:w-44 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-[filter,opacity] duration-500"
+                className="shrink-0 flex items-center justify-center h-12 sm:h-16 md:h-20 w-28 sm:w-36 md:w-44"
               >
                 <img
                   src={logo.src}

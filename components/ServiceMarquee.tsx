@@ -1,14 +1,16 @@
 "use client";
 
 const slides = [
-  "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=560&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=560&fit=crop&q=80",
+  "/marquee/maree-1.jpg",
+  "/marquee/maree-2.jpg",
+  "/marquee/matai-1.jpg",
+  "/marquee/matai-2.jpg",
+  "/marquee/viya-1.jpg",
+  "/marquee/viya-2.jpg",
+  "/marquee/diraav-design.png",
+  "/marquee/zelo-1.jpg",
+  "/marquee/zelo-2.jpg",
+  "/marquee/zelo-3.jpg",
 ];
 
 export default function ServiceMarquee() {

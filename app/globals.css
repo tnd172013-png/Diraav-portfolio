@@ -120,21 +120,13 @@ section[id] {
   animation-play-state: paused;
 }
 
-/* Client logos: show original on light, invert on dark */
+/* Client logos: show in original colors */
 .client-logo {
-  filter: grayscale(100%);
-}
-
-.client-logo:hover {
-  filter: grayscale(0%);
+  filter: none;
 }
 
 html:not(.theme-light) .client-logo {
-  filter: grayscale(100%) brightness(0) invert(1);
-}
-
-html:not(.theme-light) .client-logo:hover {
-  filter: grayscale(0%) brightness(0) invert(1);
+  filter: none;
 }
 
 /* Hide scrollbar for testimonials */

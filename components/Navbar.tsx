@@ -223,10 +223,21 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Contact Info */}
+            {/* Book a Call + Contact Info */}
             <div className="mt-auto pt-10">
+              <a
+                href="https://calendly.com/vinitardkhadka/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-link-item inline-flex items-center gap-3 font-body text-dark bg-snow px-6 py-3 rounded-full hover:bg-teal hover:text-snow transition-all duration-300 mb-6"
+              >
+                Book a Free Call
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
               <p className="font-body text-snow font-medium text-lg mb-1">
-                hello@diraav.com
+                diraav.com@gmail.com
               </p>
               <p className="font-body text-mist text-sm">
                 Lonavala, Pune &middot; India

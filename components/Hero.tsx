@@ -79,7 +79,7 @@ export default function Hero() {
       {/* Full background image */}
       <div className="hero-bg absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1200&fit=crop&q=80"
+          src="/marquee/diraav-design.png"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -98,9 +98,21 @@ export default function Hero() {
             </span>
           ))}
         </h1>
-        <p className="hero-sub font-body text-white/60 text-base md:text-lg leading-relaxed max-w-2xl" style={{ opacity: 0 }}>
+        <p className="hero-sub font-body text-white/60 text-base md:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8" style={{ opacity: 0 }}>
           Strategic marketing and consulting for founders, creators, and growing brands who are ready to build with clarity, structure, and intention.
         </p>
+        <a
+          href="https://calendly.com/vinitardkhadka/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-sub inline-flex items-center gap-3 font-body text-snow border border-snow/30 px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
+          style={{ opacity: 0 }}
+        >
+          Book a Free Call
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </a>
       </div>
 
       {/* Bottom tagline row */}

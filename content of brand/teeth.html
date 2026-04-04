@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomical Dental Chart - Fixed Layout</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      margin: 0;
+    }
+
+    .chart-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .chart-header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    /* SVG Styling */
+    svg {
+      display: block;
+      margin: 0 auto;
+      overflow: visible;
+    }
+
+    /* Gum Lines mimicking your reference image */
+    .gum {
+      fill: none;
+      stroke: #e2e8f0;
+      stroke-linecap: round;
+    }
+    .gum-adult { stroke-width: 48; }
+    .gum-primary { stroke-width: 38; }
+
+    /* Tooth Styling */
+    .tooth-group {
+      cursor: pointer;
+    }
+
+    .tooth-shape {
+      fill: #ffffff;
+      stroke: #64748b;
+      stroke-width: 1.5;
+      filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+      transition: fill 0.2s ease, stroke 0.2s ease;
+    }
+
+    .tooth-detail {
+      fill: none;
+      stroke: #94a3b8;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      pointer-events: none;
+    }
+
+    /* Hover State */
+    .tooth-group:hover .tooth-shape {
+      fill: #e0f2fe;
+      stroke: #0284c7;
+      stroke-width: 2.5;
+    }
+
+    /* Clickable Medical States */
+    .tooth-group.decay .tooth-shape { fill: #fee2e2; stroke: #ef4444; }
+    .tooth-group.decay .tooth-detail { stroke: #b91c1c; }
+    
+    .tooth-group.filling .tooth-shape { fill: #dbeafe; stroke: #2563eb; }
+    .tooth-group.filling .tooth-detail { stroke: #1d4ed8; }
+
+    /* Labels */
+    .tooth-label {
+      font-size: 13px;
+      font-weight: 600;
+      fill: #64748b;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+      user-select: none;
+    }
+    
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #475569;
+    }
+    .legend-box { width: 16px; height: 16px; border-radius: 4px; display: inline-block; vertical-align: middle; margin-right: 6px; border: 1px solid #cbd5e1; }
+  </style>
+</head>
+<body>
+
+  <div class="chart-container">
+    <div class="chart-header">
+      <h2>Interactive Dental Chart</h2>
+      <p style="color: #64748b; margin-top: -10px;">Adult & Primary Dentition • Click to toggle conditions</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" id="dental-chart" width="100%" height="auto">
+      
+      <path class="gum gum-adult" d="M 152,312 C 130,50 470,50 448,312" />
+      <path class="gum gum-adult" d="M 156,346 C 130,620 470,620 444,346" />
+
+      <path class="gum gum-primary" d="M 646,296 C 630,160 870,160 854,296" />
+      <path class="gum gum-primary" d="M 654,360 C 630,490 870,490 846,360" />
+      
+    </svg>
+
+    <div class="legend">
+      <div><div class="legend-box" style="background: #ffffff;"></div> Healthy</div>
+      <div><div class="legend-box" style="background: #fee2e2; border-color: #ef4444;"></div> Decay</div>
+      <div><div class="legend-box" style="background: #dbeafe; border-color: #2563eb;"></div> Filling</div>
+    </div>
+  </div>
+
+  <script>
+    const svgNS = "http://www.w3.org/2000/svg";
+    const chart = document.getElementById('dental-chart');
+
+    // Anatomical Coordinate Maps (dx, dy from center, a = rotation)
+    const adultUpperMap = [
+      { idR: 8, idL: 9, dx: 16, dy: 0, a: 5, type: 'incisor' },
+      { idR: 7, idL: 10, dx: 44, dy: 8, a: 18, type: 'incisor' },
+      { idR: 6, idL: 11, dx: 72, dy: 26, a: 35, type: 'canine' },
+      { idR: 5, idL: 12, dx: 98, dy: 54, a: 50, type: 'premolar' },
+      { idR: 4, idL: 13, dx: 118, dy: 88, a: 65, type: 'premolar' },
+      { idR: 3, idL: 14, dx: 134, dy: 132, a: 80, type: 'molar' },
+      { idR: 2, idL: 15, dx: 142, dy: 182, a: 85, type: 'molar' },
+      { idR: 1, idL: 16, dx: 148, dy: 232, a: 88, type: 'molar' }
+    ];
+
+    const adultLowerMap = [
+      { idR: 24, idL: 25, dx: 14, dy: 0, a: 5, type: 'incisor' },
+      { idR: 23, idL: 26, dx: 38, dy: 6, a: 15, type: 'incisor' },
+      { idR: 22, idL: 27, dx: 64, dy: 22, a: 32, type: 'canine' },
+      { idR: 21, idL: 28, dx: 88, dy: 48, a: 48, type: 'premolar' },
+      { idR: 20, idL: 29, dx: 110, dy: 80, a: 62, type: 'premolar' },
+      { idR: 19, idL: 30, dx: 128, dy: 124, a: 78, type: 'molar' },
+      { idR: 18, idL: 31, dx: 138, dy: 174, a: 84, type: 'molar' },
+      { idR: 17, idL: 32, dx: 144, dy: 224, a: 88, type: 'molar' }
+    ];
+
+    const primaryUpperMap = [
+      { idR: 'E', idL: 'F', dx: 14, dy: 0, a: 5, type: 'incisor' },
+      { idR: 'D', idL: 'G', dx: 38, dy: 8, a: 20, type: 'incisor' },
+      { idR: 'C', idL: 'H', dx: 64, dy: 26, a: 40, type: 'canine' },
+      { idR: 'B', idL: 'I', dx: 86, dy: 56, a: 65, type: 'molar' },
+      { idR: 'A', idL: 'J', dx: 104, dy: 96, a: 80, type: 'molar' }
+    ];
+
+    const primaryLowerMap = [
+      { idR: 'P', idL: 'O', dx: 12, dy: 0, a: 5, type: 'incisor' },
+      { idR: 'Q', idL: 'N', dx: 32, dy: 6, a: 18, type: 'incisor' },
+      { idR: 'R', idL: 'M', dx: 56, dy: 22, a: 38, type: 'canine' },
+      { idR: 'S', idL: 'L', dx: 78, dy: 50, a: 62, type: 'molar' },
+      { idR: 'T', idL: 'K', dx: 96, dy: 90, a: 78, type: 'molar' }
+    ];
+
+    // SVG Drawing function mapping
+    function createToothShape(type, isPrimary) {
+      const g = document.createElementNS(svgNS, 'g');
+      const scale = isPrimary ? 0.8 : 1;
+      g.setAttribute('transform', `scale(${scale})`);
+
+      const shape = document.createElementNS(svgNS, 'path');
+      shape.setAttribute('class', 'tooth-shape');
+
+      const detail = document.createElementNS(svgNS, 'path');
+      detail.setAttribute('class', 'tooth-detail');
+
+      // Mimicking your reference outline shapes
+      if (type === 'incisor') {
+        shape.setAttribute('d', 'M -10,-8 C -14,6 -8,16 0,16 C 8,16 14,6 10,-8 C 8,-14 -8,-14 -10,-8 Z');
+      } else if (type === 'canine') {
+        shape.setAttribute('d', 'M -11,-9 C -15,5 -8,18 0,20 C 8,18 15,5 11,-9 C 8,-16 -8,-16 -11,-9 Z');
+        detail.setAttribute('d', 'M 0,0 L 0,4');
+      } else if (type === 'premolar') {
+        shape.setAttribute('d', 'M -14,-10 C -16,8 -12,16 0,16 C 12,16 16,8 14,-10 C 12,-18 -12,-18 -14,-10 Z');
+        detail.setAttribute('d', 'M -6,3 L 6,3 M 0,0 L 0,6');
+      } else if (type === 'molar') {
+        shape.setAttribute('d', 'M -18,-14 C -22,10 -18,20 0,20 C 18,20 22,10 18,-14 C 16,-24 -16,-24 -18,-14 Z');
+        detail.setAttribute('d', 'M -10,3 L 10,3 M 0,-5 L 0,11 M -5,-1 Q 0,3 -5,7 M 5,-1 Q 0,3 5,7');
+      }
+
+      g.appendChild(shape);
+      if (detail.getAttribute('d')) g.appendChild(detail);
+      return g;
+    }
+
+    function drawTooth(id, x, y, angle, type, isPrimary) {
+      const group = document.createElementNS(svgNS, 'g');
+      group.setAttribute('class', 'tooth-group');
+      // Using only static translation to prevent CSS scattering bugs
+      group.setAttribute('transform', `translate(${x}, ${y})`);
+
+      const rotGroup = document.createElementNS(svgNS, 'g');
+      rotGroup.setAttribute('transform', `rotate(${angle})`);
+      rotGroup.appendChild(createToothShape(type, isPrimary));
+      group.appendChild(rotGroup);
+
+      group.addEventListener('click', function() {
+        if (this.classList.contains('decay')) {
+          this.classList.remove('decay');
+          this.classList.add('filling');
+        } else if (this.classList.contains('filling')) {
+          this.classList.remove('filling');
+        } else {
+          this.classList.add('decay');
+        }
+      });
+
+      chart.appendChild(group);
+    }
+
+    // Mathematical projection for perfectly radiating labels
+    function placeLabel(text, x, y, cx, cy, isUpper, isPrimary) {
+      const focalY = isUpper ? cy + (isPrimary ? 100 : 150) : cy - (isPrimary ? 100 : 150);
+      const vx = x - cx;
+      const vy = y - focalY;
+      const len = Math.sqrt(vx*vx + vy*vy);
+      
+      const dist = isPrimary ? 24 : 32;
+      const textX = x + (vx/len) * dist;
+      const textY = y + (vy/len) * dist;
+
+      const label = document.createElementNS(svgNS, 'text');
+      label.setAttribute('x', textX);
+      label.setAttribute('y', textY);
+      label.setAttribute('class', 'tooth-label');
+      label.textContent = text;
+      chart.appendChild(label);
+    }
+
+    function renderArch(mapData, cx, cy, isUpper, isPrimary) {
+      const signY = isUpper ? 1 : -1;
+      const baseAngle = isUpper ? 180 : 0; 
+
+      mapData.forEach(t => {
+        // Patient Right (Left side of screen)
+        drawTooth(t.idR, cx - t.dx, cy + (t.dy * signY), baseAngle + t.a, t.type, isPrimary);
+        placeLabel(t.idR, cx - t.dx, cy + (t.dy * signY), cx, cy, isUpper, isPrimary);
+
+        // Patient Left (Right side of screen)
+        drawTooth(t.idL, cx + t.dx, cy + (t.dy * signY), baseAngle - t.a, t.type, isPrimary);
+        placeLabel(t.idL, cx + t.dx, cy + (t.dy * signY), cx, cy, isUpper, isPrimary);
+      });
+    }
+
+    // Construct the Adult Arch (Left side, center X: 300)
+    renderArch(adultUpperMap, 300, 80, true, false);
+    renderArch(adultLowerMap, 300, 570, false, false);
+
+    // Construct the Primary Arch (Right side, center X: 750)
+    renderArch(primaryUpperMap, 750, 200, true, true);
+    renderArch(primaryLowerMap, 750, 450, false, true);
+
+  </script>
+</body>
+</html>

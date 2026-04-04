@@ -131,46 +131,64 @@ function PortfolioCard({
   }, []);
 
   return (
-    <div
-      ref={cardRef}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-      className="portfolio-card shrink-0 relative cursor-pointer overflow-hidden h-[280px] sm:h-[380px] md:h-[480px] will-change-[flex-grow,border-radius]"
-      style={{
-        flexGrow: 1,
-        flexBasis: 0,
-        minWidth: "100px",
-        borderRadius: "80px 80px 24px 24px",
-      }}
-    >
-      <img
-        src={item.image}
-        alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        loading="lazy"
-      />
-
-      {/* Dark overlay */}
+    <>
+      {/* Desktop card — horizontal flex with hover expand */}
       <div
-        ref={overlayRef}
-        className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent pointer-events-none"
-        style={{ opacity: 0.5 }}
-      />
-
-      {/* Card info */}
-      <div
-        ref={infoRef}
-        className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pointer-events-none"
-        style={{ opacity: 0, transform: "translateY(20px)" }}
+        ref={cardRef}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+        className="portfolio-card hidden md:block shrink-0 relative cursor-pointer overflow-hidden h-[380px] md:h-[480px] will-change-[flex-grow,border-radius]"
+        style={{
+          flexGrow: 1,
+          flexBasis: 0,
+          minWidth: "100px",
+          borderRadius: "80px 80px 24px 24px",
+        }}
       >
-        <span className="text-white/60 font-body text-xs tracking-[0.15em] uppercase block mb-2">
-          {item.category}
-        </span>
-        <h4 className="font-heading text-white text-lg md:text-xl leading-tight">
-          {item.title}
-        </h4>
+        <img
+          src={item.image}
+          alt={item.title}
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          loading="lazy"
+        />
+        <div
+          ref={overlayRef}
+          className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent pointer-events-none"
+          style={{ opacity: 0.5 }}
+        />
+        <div
+          ref={infoRef}
+          className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pointer-events-none"
+          style={{ opacity: 0, transform: "translateY(20px)" }}
+        >
+          <span className="text-white/60 font-body text-xs tracking-[0.15em] uppercase block mb-2">
+            {item.category}
+          </span>
+          <h4 className="font-heading text-white text-lg md:text-xl leading-tight">
+            {item.title}
+          </h4>
+        </div>
       </div>
-    </div>
+
+      {/* Mobile card — grid layout */}
+      <div className="portfolio-card md:hidden relative cursor-pointer overflow-hidden rounded-2xl aspect-[3/4]">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <span className="text-white/60 font-body text-[10px] tracking-[0.15em] uppercase block mb-1">
+            {item.category}
+          </span>
+          <h4 className="font-heading text-white text-base leading-tight">
+            {item.title}
+          </h4>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -218,10 +236,10 @@ export default function Portfolio() {
         </p>
       </div>
 
-      {/* Horizontal Gallery */}
+      {/* Gallery — grid on mobile, horizontal flex on desktop */}
       <div
         ref={galleryRef}
-        className="flex overflow-hidden gap-2 sm:gap-3 md:gap-4 px-3 sm:px-6 md:px-10"
+        className="grid grid-cols-2 gap-3 px-4 md:flex md:overflow-hidden md:gap-4 md:px-10"
       >
         {portfolioItems.map((item, i) => (
           <PortfolioCard key={i} item={item} />

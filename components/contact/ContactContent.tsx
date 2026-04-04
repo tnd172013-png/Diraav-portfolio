@@ -131,14 +131,25 @@ export default function ContactContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
           <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
             <div className="md:col-span-7">
-              <p className="font-body text-snow text-xs tracking-[0.2em] uppercase mb-6">Get in Touch</p>
-              <h1 className="hero-h font-heading text-snow text-[clamp(2.2rem,7vw,5.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8" style={{ opacity: 0 }}>
-                Let&apos;s Build Something<br />Intentional.
+              <h1 className="hero-h font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-6 md:mb-8" style={{ opacity: 0 }}>
+                Insights &amp; Ideas Rooted in Strategy.<br />Built With Intention.
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
-              <p className="hero-p1 font-body text-mist text-base md:text-lg leading-relaxed max-w-xl" style={{ opacity: 0 }}>
+              <p className="hero-p1 font-body text-mist text-base md:text-lg leading-relaxed max-w-xl mb-6 md:mb-8" style={{ opacity: 0 }}>
                 If you&apos;re ready to build with clarity and structure, we&apos;d love to hear from you.
               </p>
+              <a
+                href="https://calendly.com/vinitardkhadka/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-p1 inline-flex items-center gap-3 font-body text-dark bg-snow px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-teal hover:text-snow transition-all duration-300"
+                style={{ opacity: 0 }}
+              >
+                Book a Free Call
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
             </div>
 
             <div className="md:col-span-5 relative">

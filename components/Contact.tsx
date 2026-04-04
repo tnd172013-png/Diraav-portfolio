@@ -230,7 +230,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="form-el pt-4" style={{ opacity: 0 }}>
+              <div className="form-el pt-4 flex flex-wrap items-center gap-4" style={{ opacity: 0 }}>
                 <button
                   type="submit"
                   className="inline-flex items-center gap-3 font-body text-snow border border-snow/20 px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-snow hover:text-dark transition-all duration-300"
@@ -240,6 +240,17 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </button>
+                <a
+                  href="https://calendly.com/vinitardkhadka/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 font-body text-dark bg-snow px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-teal hover:text-snow transition-all duration-300"
+                >
+                  Book a Call
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
+                </a>
               </div>
             </form>
           </div>

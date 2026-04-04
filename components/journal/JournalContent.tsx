@@ -90,10 +90,10 @@ export default function JournalContent() {
             The Journal
           </p>
           <h1
-            className="hero-h font-heading text-snow text-[clamp(2.2rem,7vw,5.5rem)] tracking-tight leading-[0.95] mb-6 md:mb-8"
+            className="hero-h font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-6 md:mb-8"
             style={{ opacity: 0 }}
           >
-            Insights &amp; Ideas
+            Thoughts, Perspectives &amp; Lessons<br />From the Field.
           </h1>
           <div
             className="hero-line h-px bg-snow/20 origin-left max-w-xl mb-6"
