@@ -248,7 +248,7 @@ export default function Navbar() {
           {/* Right Side — Image (hidden on mobile) */}
           <div ref={imageRef} className="hidden lg:block w-1/2 relative">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=1200&fit=crop&q=80"
+              src="/main/contact-image.png"
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
             />

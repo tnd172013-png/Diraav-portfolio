@@ -96,16 +96,16 @@ export default function Blog() {
               </div>
 
               <div className="p-4 md:p-6">
-                <span className="text-teal font-body text-xs tracking-[0.15em] uppercase font-medium">
+                <span className="text-lavender font-body text-xs tracking-[0.15em] uppercase font-medium">
                   {blog.category}
                 </span>
-                <h3 className="font-heading text-snow text-base md:text-lg mt-3 mb-3 leading-snug group-hover:text-teal transition-colors duration-300">
+                <h3 className="font-heading text-snow text-base md:text-lg mt-3 mb-3 leading-snug group-hover:text-lavender transition-colors duration-300">
                   {blog.title}
                 </h3>
                 <p className="text-mist font-body text-sm leading-relaxed mb-4">
                   {blog.excerpt}
                 </p>
-                <span className="text-teal font-body text-sm font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <span className="text-lavender font-body text-sm font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Read More
                   <svg
                     className="w-4 h-4"
@@ -129,7 +129,7 @@ export default function Blog() {
         <div className="text-center mt-12">
           <Link
             href="/journal"
-            className="inline-flex items-center gap-2 text-teal font-body text-sm font-medium border border-teal/30 px-8 py-3 rounded-full hover:bg-teal hover:text-snow transition-all duration-300"
+            className="inline-flex items-center gap-2 text-lavender font-body text-sm font-medium border border-lavender/30 px-8 py-3 rounded-full hover:bg-lavender hover:text-dark transition-all duration-300"
           >
             Explore All Articles
             <svg

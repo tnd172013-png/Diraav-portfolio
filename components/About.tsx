@@ -105,7 +105,7 @@ export default function About() {
           <div className="flex items-end">
             <FadeIn delay={0.2}>
               <p className="text-mist font-body text-base md:text-lg leading-relaxed">
-                Most brands don&apos;t fail because they lack ideas. They fail because they lack clarity. At Diraav, we don&apos;t just &ldquo;do marketing.&rdquo; We build aligned foundations, strategic systems, and digital presence that actually convert. This is strategy with depth and marketing with intention.
+                Most brands don&apos;t fail because they lack ideas. They fail because they lack clarity. At Diraav, we don&apos;t just &ldquo;do marketing.&rdquo; We build aligned foundations, strategic systems, and digital presence that actually convert. This is a strategy with depth and marketing with intention.
               </p>
             </FadeIn>
           </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TextReveal from "@/components/ui/TextReveal";
 
@@ -140,7 +139,7 @@ export default function Contact() {
               {contactInfo.map((item, i) => {
                 const content = (
                   <div className="info-card group flex items-start gap-5" style={{ opacity: 0 }}>
-                    <div className="w-12 h-12 rounded-full border border-snow/10 bg-snow/[0.03] flex items-center justify-center text-teal shrink-0 group-hover:border-teal/30 transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-full border border-snow/10 bg-snow/[0.03] flex items-center justify-center text-lavender shrink-0 group-hover:border-lavender/30 transition-colors duration-300">
                       {item.icon}
                     </div>
                     <div>
@@ -203,7 +202,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder=""
                   className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                 />
               </div>
@@ -214,7 +213,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder=""
                   className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                 />
               </div>
@@ -259,14 +258,7 @@ export default function Contact() {
 
       {/* Copyright */}
       <div className="border-t border-snow/5 mt-12 md:mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <Image
-            src="/logo.png"
-            alt="Diraav"
-            width={140}
-            height={50}
-            className="h-10 w-auto brightness-0 invert"
-          />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex items-center justify-center">
           <p className="text-mist font-body text-xs">
             &copy; 2026 Diraav
           </p>

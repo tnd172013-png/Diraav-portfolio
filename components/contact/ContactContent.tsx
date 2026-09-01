@@ -132,11 +132,11 @@ export default function ContactContent() {
           <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
             <div className="md:col-span-7">
               <h1 className="hero-h font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-6 md:mb-8" style={{ opacity: 0 }}>
-                Insights &amp; Ideas Rooted in Strategy.<br />Built With Intention.
+                Let&apos;s Build With Clarity.<br />Start With the Right Direction.
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
               <p className="hero-p1 font-body text-mist text-base md:text-lg leading-relaxed max-w-xl mb-6 md:mb-8" style={{ opacity: 0 }}>
-                If you&apos;re ready to build with clarity and structure, we&apos;d love to hear from you.
+                If you&apos;re looking for structured growth, thoughtful strategy, and a clear path forward &mdash; this is where it begins. Tell us about your brand, your goals, and where you feel stuck. We&apos;ll take it from there.
               </p>
               <a
                 href="https://calendly.com/vinitardkhadka/30min"
@@ -178,7 +178,7 @@ export default function ContactContent() {
                 {contactInfo.map((item, i) => {
                   const content = (
                     <div className="info-card group flex items-start gap-5" style={{ opacity: 0 }}>
-                      <div className="w-12 h-12 rounded-full border border-snow/10 bg-snow/[0.03] flex items-center justify-center text-teal shrink-0 group-hover:border-teal/30 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-full border border-snow/10 bg-snow/[0.03] flex items-center justify-center text-lavender shrink-0 group-hover:border-lavender/30 transition-colors duration-300">
                         {item.icon}
                       </div>
                       <div>
@@ -240,7 +240,7 @@ export default function ContactContent() {
                   </label>
                   <input
                     type="text"
-                    placeholder="John Doe"
+                    placeholder=""
                     className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                   />
                 </div>
@@ -251,7 +251,7 @@ export default function ContactContent() {
                   </label>
                   <input
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder=""
                     className="w-full bg-transparent border-b border-snow/15 pb-4 text-snow font-body text-base placeholder:text-mist focus:outline-none focus:border-teal/50 transition-colors duration-300"
                   />
                 </div>
@@ -292,23 +292,6 @@ export default function ContactContent() {
               </form>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Full-width image band */}
-      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=800&fit=crop&q=80"
-            alt="Team collaboration"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-dark/60" />
-        </div>
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <p className="font-heading text-white text-[clamp(1.5rem,4vw,2.5rem)] text-center italic max-w-2xl px-6">
-            &ldquo;Every great brand starts with a conversation.&rdquo;
-          </p>
         </div>
       </section>
 

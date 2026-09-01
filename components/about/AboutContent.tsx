@@ -157,10 +157,10 @@ export default function AboutContent() {
               </h1>
               <div className="hero-line h-px bg-snow/20 origin-left mb-6" style={{ transform: "scaleX(0)" }} />
               <p className="hero-p1 font-body text-mist text-base md:text-lg leading-relaxed max-w-xl mb-4" style={{ opacity: 0 }}>
-                Diraav was built on a simple belief &mdash; great brands aren&apos;t rushed. They&apos;re built with clarity. What started as marketing services evolved into something deeper: strategic consulting for brands that want to grow intentionally, not chaotically.
+                Diraav was built on a simple belief &mdash; great brands aren&apos;t rushed, they&apos;re built with clarity, direction, and purpose. What began as a marketing service naturally evolved into a strategic consulting space for brands that want to grow with intention, not noise.
               </p>
-              <p className="hero-p2 font-body text-mist text-sm md:text-base leading-relaxed max-w-xl" style={{ opacity: 0 }}>
-                We don&apos;t chase trends. We build foundations.
+              <p className="hero-p2 font-body text-sm md:text-base text-mist leading-relaxed max-w-xl" style={{ opacity: 0 }}>
+                We work at the intersection of ideas and execution, helping businesses move beyond scattered efforts into structured, thoughtful growth. Every decision, from design to communication, is guided by strategy, not guesswork. We don&apos;t chase trends or quick wins. We build strong foundations that last.
               </p>
             </div>
 
@@ -181,22 +181,25 @@ export default function AboutContent() {
           <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-center">
             <div className="md:col-span-5 relative">
               <AnimatedImage
-                src="/marquee/vinita-founder.jpg"
+                src="/about/img-7568-1.jpg"
                 alt="Vinita — Founder"
                 aspect="aspect-[3/4]"
               />
             </div>
             <div className="md:col-span-7 md:pl-8">
-              <p className="font-body text-teal text-xs tracking-[0.2em] uppercase mb-6">Meet the Founder</p>
+              <p className="font-body text-white text-xs tracking-[0.2em] uppercase mb-6">Meet the Founder</p>
               <h2 className="font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-2">
                 Vinita Khadka
               </h2>
-              <p className="font-body text-teal/70 text-sm mb-6">Founder &amp; Strategist</p>
+              <p className="font-body text-white text-sm mb-6">Founder &amp; Strategist</p>
               <p className="font-body text-mist text-base leading-relaxed mb-4">
-                A marketer, consultant, and builder at heart. Vinita believes in structured growth, calm scaling, and building brands that feel aligned &mdash; not overwhelming.
+                A marketer, consultant, and builder at heart, Vinita approaches brands with a focus on clarity, structure, and long-term vision. She believes growth doesn&apos;t have to feel chaotic &mdash; it can be calm, intentional, and aligned with the brand&apos;s core identity.
+              </p>
+              <p className="font-body text-mist text-sm leading-relaxed mb-4">
+                With hands-on experience across marketing, website systems, brand positioning, and growth strategy, she brings a balance of creative thinking and strategic execution to every project. Her work goes beyond surface-level marketing. It&apos;s about building systems that support consistent, scalable growth.
               </p>
               <p className="font-body text-mist text-sm leading-relaxed">
-                With experience in marketing, website systems, brand positioning, and strategies, she brings both creative and growth thinking to every project. This isn&apos;t just an agency. It&apos;s a strategic partner.
+                Diraav reflects her approach: thoughtful, minimal, and rooted in purpose. This isn&apos;t just an agency. It&apos;s a strategic partner for brands that want to grow with direction.
               </p>
             </div>
           </div>
@@ -222,23 +225,6 @@ export default function AboutContent() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Full-width image band */}
-      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1600&h=800&fit=crop&q=80"
-            alt="Creative team"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-dark/60" />
-        </div>
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <p className="font-heading text-white text-[clamp(1.5rem,3vw,2.5rem)] text-center italic max-w-2xl px-6">
-            &ldquo;We work slowly, strategically, and deliberately.&rdquo;
-          </p>
         </div>
       </section>
 
@@ -272,9 +258,9 @@ export default function AboutContent() {
       <section className="py-12 md:py-16 bg-dark overflow-hidden">
         <div className="flex gap-4 md:gap-6 px-6">
           {[
-            { src: "/portfolio/Untitled design (11).png", alt: "Creative process" },
-            { src: "/portfolio/Untitled design (12).png", alt: "Workspace" },
-            { src: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop&q=80", alt: "Strategy session" },
+            { src: "/about/untitled-design-13.png", alt: "Creative process" },
+            { src: "/about/untitled-design-14.png", alt: "Workspace" },
+            { src: "/about/untitled-design-15.png", alt: "Strategy session" },
           ].map((img, i) => (
             <div key={i} className="flex-1 min-w-0 relative">
               <AnimatedImage src={img.src} alt={img.alt} aspect="aspect-[3/2]" />

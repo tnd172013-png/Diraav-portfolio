@@ -1,16 +1,21 @@
 "use client";
 
 const slides = [
-  "/marquee/maree-1.jpg",
-  "/marquee/maree-2.jpg",
-  "/marquee/matai-1.jpg",
-  "/marquee/matai-2.jpg",
-  "/marquee/viya-1.jpg",
-  "/marquee/viya-2.jpg",
-  "/marquee/diraav-design.png",
-  "/marquee/zelo-1.jpg",
-  "/marquee/zelo-2.jpg",
-  "/marquee/zelo-3.jpg",
+  "/gallery/casa-studio.png",
+  "/gallery/casa-studio-1.png",
+  "/gallery/christian-wedding-boutique.png",
+  "/gallery/hhc-brandkit.png",
+  "/gallery/hhc-brandkit-2.png",
+  "/gallery/la-dart-1.png",
+  "/gallery/maree-brandkit.png",
+  "/gallery/norde-atelier.png",
+  "/gallery/nom.png",
+  "/gallery/nom-1.png",
+  "/gallery/roma-27.png",
+  "/gallery/roma-27-1.png",
+  "/gallery/seori-skincare.png",
+  "/gallery/zelo-drinks-1.png",
+  "/gallery/zelo-drinks-2.png",
 ];
 
 export default function ServiceMarquee() {

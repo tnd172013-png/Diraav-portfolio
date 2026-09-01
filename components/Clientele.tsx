@@ -5,13 +5,13 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import TextReveal from "@/components/ui/TextReveal";
 
 const clientLogos = [
-  { src: "/portfolio/deluxe-enterprises.png", alt: "Deluxe Enterprises" },
-  { src: "/portfolio/ektarva.png", alt: "Ektarva" },
-  { src: "/portfolio/gerbera-fuchsia.png", alt: "Gerbera Fuchsia" },
-  { src: "/portfolio/ek-prayaas.png", alt: "Ek Prayaas" },
-  { src: "/portfolio/thread-trek.png", alt: "Thread Trek" },
-  { src: "/portfolio/gulbasta.png", alt: "Gulbasta" },
-  { src: "/portfolio/shambus.jpg", alt: "Shambu's" },
+  { src: "/clients/ek-prayaas.png", alt: "Ek Prayaas" },
+  { src: "/clients/ektarva-brand-kit-2.png", alt: "Ektarva" },
+  { src: "/clients/grasp.png", alt: "Grasp" },
+  { src: "/clients/hhc-brandkit-2.png", alt: "HHC" },
+  { src: "/clients/poweful-intention.png", alt: "Powerful Intention" },
+  { src: "/clients/the-petal-twist-brandkit.png", alt: "The Petal Twist" },
+  { src: "/clients/brand-kit-for-vaayura-1.png", alt: "Vaayura" },
 ];
 
 export default function Clientele() {

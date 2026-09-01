@@ -1,200 +1,208 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useState } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import TextReveal from "@/components/ui/TextReveal";
 
-const portfolioItems = [
+const categories = [
+  "Featured",
+  "Social Media",
+  "Market Research",
+  "Branding",
+] as const;
+
+type Category = (typeof categories)[number];
+
+type PortfolioItem = {
+  title: string;
+  category: Category;
+  url?: string;
+  image?: string;
+  /** "contain" for logo-like images shown on a gradient backdrop; omit for full-bleed brand posts */
+  fit?: "contain";
+};
+
+const portfolioItems: PortfolioItem[] = [
+  // Featured
   {
     title: "Deluxe Enterprises",
-    category: "Website Development",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=900&fit=crop",
-  },
-  {
-    title: "Fiesta Hospitality",
-    category: "Branding",
-    image:
-      "https://images.unsplash.com/photo-1636955816868-fcb881e57954?w=600&h=900&fit=crop",
+    category: "Featured",
+    url: "https://deluxeenterprises.in/",
+    image: "/portfolio/deluxe-enterprises.png",
+    fit: "contain",
   },
   {
     title: "Ek Prayaas",
-    category: "Website Development",
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=900&fit=crop",
+    category: "Featured",
+    url: "https://ekprayaas.co/",
+    image: "/clients/ek-prayaas.png",
+    fit: "contain",
   },
   {
-    title: "Growth Analytics",
-    category: "Market Research",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=900&fit=crop",
+    title: "Vaayura",
+    category: "Featured",
+    url: "https://vaayura.com/",
+    image: "/clients/brand-kit-for-vaayura-1.png",
   },
+  // Social Media
   {
-    title: "Habot Connect",
+    title: "Powerful Intention",
     category: "Social Media",
-    image:
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=900&fit=crop",
+    url: "https://www.instagram.com/powerfulintention/",
+    image: "/clients/poweful-intention.png",
+    fit: "contain",
   },
   {
-    title: "Brand Elevation",
-    category: "Brand Strategy",
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=900&fit=crop",
-  },
-  {
-    title: "Urban Insights",
-    category: "Market Research",
-    image:
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=900&fit=crop",
-  },
-  {
-    title: "Digital Presence",
+    title: "Ektrava",
     category: "Social Media",
-    image:
-      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&h=900&fit=crop",
+    url: "https://www.instagram.com/ektarvaa/",
+    // TODO: add image when available
+  },
+  // Market Research
+  {
+    title: "Habot",
+    category: "Market Research",
+    url: "https://www.habot.io/",
+    // TODO: add image when available
+  },
+  {
+    title: "Keld",
+    category: "Market Research",
+    url: "https://www.keldindia.com/",
+    // TODO: add image when available
+  },
+  // Branding
+  {
+    title: "Ektarva",
+    category: "Branding",
+    image: "/clients/ektarva-brand-kit-2.png",
+  },
+  {
+    title: "Hustle Den",
+    category: "Branding",
+    // TODO: add logo when available
+  },
+  {
+    title: "HHC",
+    category: "Branding",
+    image: "/gallery/hhc-brandkit.png",
+  },
+  {
+    title: "Samadhan",
+    category: "Branding",
+    // TODO: add logo when available
+  },
+  {
+    title: "The Petal Twist",
+    category: "Branding",
+    image: "/clients/the-petal-twist-brandkit.png",
   },
 ];
 
 function PortfolioCard({
   item,
+  index,
 }: {
-  item: (typeof portfolioItems)[number];
+  item: PortfolioItem;
+  index: number;
 }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const infoRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const tweenRef = useRef<gsap.core.Timeline | null>(null);
-
-  const handleEnter = useCallback(() => {
-    if (!cardRef.current || !infoRef.current || !overlayRef.current) return;
-
-    // Kill any running animation
-    if (tweenRef.current) tweenRef.current.kill();
-
-    const tl = gsap.timeline();
-
-    tl.to(cardRef.current, {
-      flexGrow: 2.5,
-      borderRadius: "24px",
-      duration: 0.5,
-      ease: "power2.inOut",
-    });
-
-    tl.to(
-      overlayRef.current,
-      { opacity: 0.85, duration: 0.3, ease: "power2.out" },
-      0
-    );
-
-    tl.fromTo(
-      infoRef.current,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" },
-      0.15
-    );
-
-    tweenRef.current = tl;
-  }, []);
-
-  const handleLeave = useCallback(() => {
-    if (!cardRef.current || !infoRef.current || !overlayRef.current) return;
-
-    if (tweenRef.current) tweenRef.current.kill();
-
-    const tl = gsap.timeline();
-
-    tl.to(infoRef.current, {
-      y: 20,
-      opacity: 0,
-      duration: 0.2,
-      ease: "power2.in",
-    });
-
-    tl.to(
-      cardRef.current,
-      {
-        flexGrow: 1,
-        borderRadius: "80px 80px 24px 24px",
-        duration: 0.5,
-        ease: "power2.inOut",
-      },
-      0.05
-    );
-
-    tl.to(
-      overlayRef.current,
-      { opacity: 0.5, duration: 0.3, ease: "power2.out" },
-      0.05
-    );
-
-    tweenRef.current = tl;
-  }, []);
+  const num = String(index + 1).padStart(2, "0");
 
   return (
-    <>
-      {/* Desktop card — horizontal flex with hover expand */}
-      <div
-        ref={cardRef}
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-        className="portfolio-card hidden md:block shrink-0 relative cursor-pointer overflow-hidden h-[380px] md:h-[480px] will-change-[flex-grow,border-radius]"
-        style={{
-          flexGrow: 1,
-          flexBasis: 0,
-          minWidth: "100px",
-          borderRadius: "80px 80px 24px 24px",
-        }}
-      >
-        <img
-          src={item.image}
-          alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          loading="lazy"
-        />
-        <div
-          ref={overlayRef}
-          className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent pointer-events-none"
-          style={{ opacity: 0.5 }}
-        />
-        <div
-          ref={infoRef}
-          className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pointer-events-none"
-          style={{ opacity: 0, transform: "translateY(20px)" }}
-        >
-          <span className="text-white/60 font-body text-xs tracking-[0.15em] uppercase block mb-2">
-            {item.category}
-          </span>
-          <h4 className="font-heading text-white text-lg md:text-xl leading-tight">
-            {item.title}
-          </h4>
-        </div>
+    <div className="portfolio-card group relative rounded-2xl border border-white/10 bg-snow/[0.02] overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:border-lavender/40 hover:shadow-xl hover:shadow-lavender/5">
+      {/* Media area */}
+      <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-navy/70 via-dark to-dark">
+        {item.image ? (
+          <>
+            {/* Ghost index number */}
+            <span className="absolute top-4 right-5 z-[1] font-heading text-5xl md:text-6xl leading-none text-snow/[0.07] select-none pointer-events-none">
+              {num}
+            </span>
+            {item.fit === "contain" ? (
+              <div
+                className="absolute inset-0 flex items-center justify-center p-8 md:p-10"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(209,219,235,0.08), transparent 70%)",
+                }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="max-h-full max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <img
+                src={item.image}
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                loading="lazy"
+              />
+            )}
+          </>
+        ) : (
+          /* No image yet — typographic treatment with a large ghost number */
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+            <span className="font-heading text-[clamp(5rem,12vw,8rem)] leading-none text-snow/[0.08] select-none transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+              {num}
+            </span>
+            <span className="font-body text-mist/60 text-[10px] tracking-[0.3em] uppercase">
+              Diraav
+            </span>
+          </div>
+        )}
+
+        {/* Sheen sweep on hover */}
+        <div className="absolute inset-0 z-[2] bg-gradient-to-r from-transparent via-lavender/[0.07] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
       </div>
 
-      {/* Mobile card — grid layout */}
-      <div className="portfolio-card md:hidden relative cursor-pointer overflow-hidden rounded-2xl aspect-[3/4]">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <span className="text-white/60 font-body text-[10px] tracking-[0.15em] uppercase block mb-1">
+      {/* Card footer */}
+      <div className="flex items-end justify-between gap-3 p-5 md:p-6 border-t border-white/5">
+        <div className="min-w-0">
+          <span className="block font-body text-mist text-[10px] md:text-xs tracking-[0.2em] uppercase mb-2">
             {item.category}
           </span>
-          <h4 className="font-heading text-white text-base leading-tight">
+          <h4 className="font-heading text-snow text-lg md:text-xl leading-tight group-hover:text-lavender transition-colors duration-300">
             {item.title}
           </h4>
+          <span className="block h-px w-8 bg-lavender/30 mt-3 group-hover:w-14 group-hover:bg-lavender/60 transition-all duration-500" />
         </div>
+        {item.url && (
+          <svg
+            className="w-5 h-5 mb-1 shrink-0 text-lavender opacity-0 translate-y-1 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        )}
       </div>
-    </>
+
+      {/* Stretched link */}
+      {item.url && (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${item.title}`}
+          className="absolute inset-0 z-10"
+        />
+      )}
+    </div>
   );
 }
 
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>("Featured");
+
+  const visibleItems = portfolioItems.filter(
+    (item) => item.category === activeCategory
+  );
 
   useGSAP(
     () => {
@@ -219,7 +227,7 @@ export default function Portfolio() {
         }
       );
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [activeCategory] }
   );
 
   return (
@@ -231,19 +239,38 @@ export default function Portfolio() {
         >
           Featured Projects
         </TextReveal>
-        <p className="text-mist font-body text-base md:text-lg max-w-xl">
+        <p className="text-mist font-body text-base md:text-lg max-w-xl mb-8">
           Here&apos;s what aligned execution looks like.
         </p>
+
+        {/* Category filter */}
+        <div className="flex flex-wrap gap-2 md:gap-3">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`font-body text-xs md:text-sm tracking-[0.1em] uppercase px-4 md:px-5 py-2 rounded-full border transition-all duration-300 ${
+                activeCategory === cat
+                  ? "border-snow/60 text-snow bg-snow/10"
+                  : "border-snow/15 text-mist hover:border-snow/40 hover:text-snow"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Gallery — grid on mobile, horizontal flex on desktop */}
-      <div
-        ref={galleryRef}
-        className="grid grid-cols-2 gap-3 px-4 md:flex md:overflow-hidden md:gap-4 md:px-10"
-      >
-        {portfolioItems.map((item, i) => (
-          <PortfolioCard key={i} item={item} />
-        ))}
+      {/* Unified card grid — same treatment across all categories */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div
+          ref={galleryRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+        >
+          {visibleItems.map((item, i) => (
+            <PortfolioCard key={item.title} item={item} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );

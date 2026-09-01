@@ -6,14 +6,15 @@ import { gsap, useGSAP } from "@/lib/gsap";
 const services = [
   {
     title: "Marketing Strategy",
-    tagline: "Direction before distribution.",
+    tagline: "Clarity Before Growth.",
     description:
-      "Before campaigns, before content, before scale — there must be direction. Our marketing strategy work focuses on building structured growth pathways tailored to your business model.",
+      "Before campaigns, content, or scaling, there needs to be a clear path. Our marketing strategy isn't just planning; it's about building a structured system for how your brand attracts, converts, and grows. We focus on aligning your business model, audience behavior, and positioning to create a strategy that is intentional, scalable, and easy to execute. No scattered efforts — just a clear direction that guides every decision moving forward.",
     offerings: [
-      "End-to-end growth mapping",
-      "Customer journey design",
-      "Funnel architecture",
-      "Lead generation strategy",
+      "End-to-end growth mapping aligned with your business goals",
+      "Customer journey design focused on conversion and retention",
+      "Funnel architecture built for consistency and scalability",
+      "Lead generation strategy tailored to your audience and offer",
+      "Content and distribution direction for long-term visibility",
     ],
     images: [
       "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=1000&fit=crop&q=80",
@@ -23,65 +24,69 @@ const services = [
   },
   {
     title: "Brand Positioning & Strategy",
-    tagline: "Positioning determines perception. Perception determines growth.",
+    tagline: "Defined Positioning. Clear Perception. Intentional Growth.",
     description:
-      "We help brands define how they are understood in the market. Strong positioning removes confusion — internally and externally.",
+      "Positioning shapes how your brand is seen, understood, and remembered. Without it, marketing feels scattered and inconsistent. With it, every decision becomes sharper and more aligned. We help you define a distinct space in the market — one that reflects your value, connects with the right audience, and differentiates you with clarity. The goal isn't just to stand out, but to stand for something specific and recognizable.",
     offerings: [
-      "Core positioning framework",
-      "Messaging architecture",
-      "Brand narrative development",
-      "Competitive differentiation",
+      "Core positioning framework aligned with your vision and market",
+      "Messaging architecture that brings consistency across all touchpoints",
+      "Brand narrative development that builds connection and recall",
+      "Competitive differentiation to clearly define your unique space",
+      "Audience clarity to ensure your communication resonates with the right people",
     ],
     images: [
-      "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?w=800&h=1000&fit=crop&q=80",
+      "/services/brand-positioning/casa-studio.png",
+      "/services/brand-positioning/daniel-saint-law-firm.png",
+      "/services/brand-positioning/the-quiet-oven.png",
     ],
   },
   {
     title: "Consulting",
-    tagline: "Strategic guidance for founders and teams.",
+    tagline: "Strategic Clarity for Founders & Teams.",
     description:
-      "For founders and teams who need strategic guidance without full execution. Our consulting engagements are structured, not casual. Ideal for businesses that want clarity and direction while executing internally.",
+      "For brands that don't need full execution, but need the right direction. Our consulting is designed for founders and teams who want structured thinking, sharper decisions, and a clear path forward — while keeping execution in-house. This isn't casual advice. It's focused, high-impact guidance built around your business, your challenges, and your growth stage.",
     offerings: [
-      "Business model analysis",
-      "Growth recalibration sessions",
-      "Marketing audits",
-      "Ongoing advisory retainers",
+      "In-depth business model analysis to identify gaps and opportunities",
+      "Growth recalibration sessions to realign direction and priorities",
+      "Marketing and system audits for clarity on what's working (and what's not)",
+      "Ongoing advisory retainers for consistent strategic support",
+      "Decision-making frameworks to help you move faster with confidence",
     ],
     images: [
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=1000&fit=crop&q=80",
+      "/services/consulting/untitled-design-16.png",
+      "/services/consulting/untitled-design-17.png",
+      "/services/consulting/untitled-design-18.png",
     ],
   },
   {
     title: "Market Research",
-    tagline: "Insight before assumption.",
+    tagline: "Insight Before Action. Precision Before Scale.",
     description:
-      "Every strategic move should be informed. Our research work supports both new ventures and scaling brands. It reduces assumptions. It increases precision.",
+      "Strong decisions come from a clear understanding — not assumptions. Our research goes beyond surface-level data to uncover real insights about your market, audience, and competitive space. Whether you're building from the ground up or scaling an existing brand, we focus on bringing clarity to where you stand, where the opportunities lie, and how to move forward with confidence.",
     offerings: [
-      "Industry landscape analysis",
-      "Competitor benchmarking",
-      "Customer behaviour study",
-      "Market demand validation",
+      "Industry landscape analysis to map trends, gaps, and opportunities",
+      "Competitor benchmarking to understand positioning and market dynamics",
+      "Customer behavior insights to align with real needs and expectations",
+      "Market demand validation to reduce risk before scaling",
+      "Strategic insights translated into actionable direction",
     ],
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=1000&fit=crop&q=80",
+      "/services/market-research/untitled-design-19.png",
+      "/services/market-research/untitled-design-20.png",
+      "/services/market-research/untitled-design-21.png",
     ],
   },
   {
     title: "Website Development",
-    tagline: "Your digital infrastructure.",
+    tagline: "Built as Infrastructure. Designed for Growth.",
     description:
-      "Your website is not just a design asset. It is your digital infrastructure. We build structured, scalable websites that combine clarity and performance. Designed for clarity. Built for growth.",
+      "Your website is more than a visual asset — it's the foundation of your digital presence. We build websites as structured systems that support your brand, guide your audience, and drive consistent results. Every element is designed with intention — from how users navigate to how they convert. The focus isn't just aesthetics, but clarity, performance, and long-term scalability.",
     offerings: [
-      "Strategic site architecture",
-      "UX-focused layouts",
-      "Conversion pathway design",
-      "SEO-ready structure",
+      "Strategic site architecture aligned with your business goals",
+      "UX-focused layouts designed for clarity and ease of navigation",
+      "Conversion pathway design to guide users toward action",
+      "SEO-ready structure to support visibility from the ground up",
+      "Scalable systems that grow with your business",
     ],
     images: [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1000&fit=crop&q=80",
@@ -91,19 +96,20 @@ const services = [
   },
   {
     title: "SaaS Strategy & Platform Development",
-    tagline: "From idea to structured product.",
+    tagline: "From Idea to Structured Product. Built for Market Readiness.",
     description:
-      "For founders building digital products and platforms. This service bridges product thinking with market readiness. Because SaaS growth is not just technical — it is strategic.",
+      "Building a SaaS product goes beyond development — it requires clarity in positioning, user flow, and how the product fits into the market. We bridge product thinking with strategic direction to help you build platforms that are not just functional, but scalable and aligned. We focus on turning ideas into structured products with a clear path to adoption, retention, and growth.",
     offerings: [
-      "Product positioning",
-      "User journey structuring",
-      "Go-to-market strategy",
-      "Growth funnel design",
+      "Product positioning to define your place in the market",
+      "User journey structuring for seamless onboarding and engagement",
+      "Go-to-market strategy aligned with your target audience and launch goals",
+      "Growth funnel design to support acquisition, activation, and retention",
+      "Strategic alignment between product, marketing, and business goals",
     ],
     images: [
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=1000&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=1000&fit=crop&q=80",
+      "/services/saas/untitled-design-11.png",
+      "/services/saas/untitled-design-12.png",
+      "/services/saas/untitled-design-13.png",
     ],
   },
 ];
@@ -248,7 +254,7 @@ function ServiceBlock({
               {service.title}
             </h2>
             <p
-              className="service-tagline font-heading text-teal text-lg md:text-xl italic mb-6"
+              className="service-tagline font-heading text-white text-lg md:text-xl italic mb-6"
               style={{ opacity: 0 }}
             >
               {service.tagline}
@@ -382,7 +388,7 @@ export default function ServicesContent() {
                 className="hero-heading font-heading text-snow text-[clamp(2rem,5vw,3rem)] tracking-tight leading-[1.1] mb-6 md:mb-8"
                 style={{ opacity: 0 }}
               >
-                Insights &amp; Ideas Rooted in Strategy.<br />Built With Intention.
+                Strategic Thinking. Thoughtful Execution.<br />Built for Sustainable Growth.
               </h1>
               <div
                 className="hero-line h-px bg-snow/20 origin-left mb-6"
@@ -392,8 +398,11 @@ export default function ServicesContent() {
                 className="hero-sub font-body text-mist text-base md:text-lg max-w-xl leading-relaxed mb-10"
                 style={{ opacity: 0 }}
               >
-                At Diraav, every service begins with clarity. We don&apos;t execute in isolation.
-                We design systems where strategy, positioning, research, and infrastructure work together.
+                At Diraav, every service starts with clarity and intention. We don&apos;t believe in isolated
+                execution &mdash; we build interconnected systems where strategy, positioning, research, and
+                digital infrastructure work together seamlessly. Our approach is simple: align the foundation
+                first, then scale with direction. This ensures every brand we work with grows with consistency,
+                not confusion.
               </p>
 
               {/* Quick stats */}
@@ -404,8 +413,8 @@ export default function ServicesContent() {
                   { num: "100%", label: "Client Retention" },
                 ].map((stat, i) => (
                   <div key={i} className="hero-stat" style={{ opacity: 0 }}>
-                    <span className="font-heading text-snow text-2xl md:text-3xl block">{stat.num}</span>
-                    <span className="font-body text-snow text-xs tracking-[0.1em] uppercase">{stat.label}</span>
+                    <span className="font-heading text-white text-2xl md:text-3xl block">{stat.num}</span>
+                    <span className="font-body text-white text-xs tracking-[0.1em] uppercase">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -419,7 +428,7 @@ export default function ServicesContent() {
               >
                 <div className="hero-img-inner absolute inset-0">
                   <img
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=1000&fit=crop&q=80"
+                    src="/main/services-stats.png"
                     alt="Diraav team at work"
                     className="w-full h-full object-cover"
                   />
@@ -447,7 +456,7 @@ export default function ServicesContent() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <h2 className="font-heading text-snow text-[clamp(1.5rem,4vw,2.5rem)] tracking-tight mb-10 md:mb-16">
-            How Diraav Can Help You
+            How We Can Help You
           </h2>
 
           <div ref={helpRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-12">

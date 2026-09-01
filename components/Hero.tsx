@@ -79,7 +79,7 @@ export default function Hero() {
       {/* Full background image */}
       <div className="hero-bg absolute inset-0">
         <img
-          src="/marquee/diraav-design.png"
+          src="/main/hero-main.png"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -98,7 +98,7 @@ export default function Hero() {
             </span>
           ))}
         </h1>
-        <p className="hero-sub font-body text-white/60 text-base md:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8" style={{ opacity: 0 }}>
+        <p className="hero-sub font-body text-white text-base md:text-lg leading-relaxed max-w-2xl mb-6 md:mb-8" style={{ opacity: 0 }}>
           Strategic marketing and consulting for founders, creators, and growing brands who are ready to build with clarity, structure, and intention.
         </p>
         <a
